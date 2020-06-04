@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Eastblue-分层实验说明 - Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
+  <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <meta http-equiv="expires" content="0">
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./Eastblue-分层实验说明 - Document_files/vue.css">
+  <link rel="stylesheet" href="./Eastblue-分层实验说明 - Document_files/mermaid.min.css">
+<style>
+.sidebar {
+  padding-top: 0;
+}
+
+.search {
+  margin-bottom: 20px;
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.search .input-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.search .results-panel {
+  display: none;
+}
+
+.search .results-panel.show {
+  display: block;
+}
+
+.search input {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0 7px;
+  line-height: 36px;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+.search input:focus {
+  box-shadow: 0 0 5px var(--theme-color, #42b983);
+  border: 1px solid var(--theme-color, #42b983);
+}
+
+.search input::-webkit-search-decoration,
+.search input::-webkit-search-cancel-button,
+.search input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.search .clear-button {
+  width: 36px;
+  text-align: right;
+  display: none;
+}
+
+.search .clear-button.show {
+  display: block;
+}
+
+.search .clear-button svg {
+  transform: scale(.5);
+}
+
+.search h2 {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.search a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.search .matching-post {
+  border-bottom: 1px solid #eee;
+}
+
+.search .matching-post:last-child {
+  border-bottom: 0;
+}
+
+.search p {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.search p.empty {
+  text-align: center;
+}
+
+.app-name.hide, .sidebar-nav.hide {
+  display: none;
+}</style></head>
+
+<body data-page="api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E.md" class="ready sticky">
+  <main><button class="sidebar-toggle" aria-label="Menu"><div class="sidebar-toggle-button"><span></span><span></span><span></span></div></button><aside class="sidebar"><div class="search"><div class="input-wrap">
+      <input type="search" value="" aria-label="Search text" placeholder="Type to search">
+      <div class="clear-button">
+        <svg width="26" height="24">
+          <circle cx="12" cy="12" r="11" fill="#ccc"></circle>
+          <path stroke="white" stroke-width="2" d="M8.25,8.25,15.75,15.75"></path>
+          <path stroke="white" stroke-width="2" d="M8.25,15.75,15.75,8.25"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="results-panel"></div>
+    </div><div class="sidebar-nav"><ul><li><a href="http://inner-pf.game168.com.tw/docs/#/">返回上级目录</a></li><li>Eastblue接口文档<ul><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-游戏API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-MasterAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-MasterAPI说明文档</a></li><li class=""><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E">Eastblue-分层实验说明</a><ul class="app-sub-sidebar"><li class="active"><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e4%b8%80%e3%80%81%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">一、基本原理</a></li><li class=""><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e4%ba%8c%e3%80%81%e5%8a%9f%e8%83%bd%e6%b5%81%e7%a8%8b">二、功能流程</a></li><li class=""><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e4%b8%89%e3%80%81%e5%bc%80%e5%8f%91%e8%af%b4%e6%98%8e">三、开发说明</a></li><li class=""><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e5%9b%9b%e3%80%81%e6%b8%b8%e6%88%8f%e6%95%b0%e6%8d%ae%e8%ae%b0%e5%bd%95%e7%9b%b8%e5%85%b3">四、游戏数据记录相关</a></li></ul></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%9F%A5%E8%AF%A2%E7%B3%BB%E7%BB%9FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-查询系统API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%A4%A7%E6%95%B0%E6%8D%AEAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-大数据API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/164%E6%9C%8D%E5%8A%A1%E5%99%A8-Eastblue%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">164服务器-Eastblue API说明文档</a></li></ul></li><li>官网接口文档<ul><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E6%B8%B8%E6%88%8F%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8API%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3">游戏后端服务器API对接文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AF%E5%85%B6%E4%BB%96API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端其他API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AF%E8%B4%A6%E5%8F%B7%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端账号相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AF%E6%94%AF%E4%BB%98%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端支付相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E9%A1%B5%E6%B8%B8%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">页游前端相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%B9%B3%E5%AE%89%E9%93%B6%E8%A1%8C%E6%94%AF%E4%BB%98%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">平安银行支付相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AFEastblue%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端Eastblue相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网网站相关API说明文档</a></li></ul></li><li>数据平台文档<ul><li><a href="http://inner-pf.game168.com.tw/docs/#/api/BigQuery-%E5%B9%B3%E5%8F%B0%E5%AE%98%E7%BD%91%E7%9B%B8%E5%85%B3%E8%A1%A8%E8%AF%B4%E6%98%8E">BigQuery-平台官网相关表说明</a></li></ul></li></ul></div></aside><section class="content"><article class="markdown-section" id="main"><h1 id="eastblue-分层实验功能说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=eastblue-%e5%88%86%e5%b1%82%e5%ae%9e%e9%aa%8c%e5%8a%9f%e8%83%bd%e8%af%b4%e6%98%8e" data-id="eastblue-分层实验功能说明" class="anchor"><span>Eastblue-分层实验功能说明</span></a></h1><h3 id="一、基本原理"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e4%b8%80%e3%80%81%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86" data-id="一、基本原理" class="anchor"><span>一、基本原理</span></a></h3><p>详见 <a href="https://blog.csdn.net/bigheadyushan/article/details/78089215" target="_blank">https://blog.csdn.net/bigheadyushan/article/details/78089215</a></p><h3 id="二、功能流程"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e4%ba%8c%e3%80%81%e5%8a%9f%e8%83%bd%e6%b5%81%e7%a8%8b" data-id="二、功能流程" class="anchor"><span>二、功能流程</span></a></h3><ol><li><p>实验创建：</p><ul><li>实验负责人（策划、运营）在Eastblue的“实验管理”功能中创建实验<ul><li>需提交的信息包括 <strong>实验名称</strong>、<strong>参与用户范围</strong>、<strong>分流规则</strong>、<strong>追踪事件名称</strong> 等</li></ul></li><li>Eastblue通过API将实验配置信息通知到游戏后端 【api1】，配置信息包括：<ul><li>该实验的唯一标识 <strong>unique_key</strong> （也用作该实验分流算法的salt）</li><li>每个实验变体的名称、流量占比</li><li>追踪事件的event_type、event_name等</li></ul></li></ul></li><li><p>实验开发</p><ul><li><p>负责人配合相关研发人员进行实验开发</p></li><li><p>开发完成后，游戏发版，使该实验处于准备状态，等待开启</p></li><li><p><strong>功能测试</strong>：在Eastblue上添加该实验的测试账号 </p><ul><li><p>测试账号说明</p><ul><li>测试账号被固定划分至指定的实验变体，可在实验开启前预先体验相关功能</li><li>测试账号不参与数据分析</li></ul></li><li><p>Eastblue通过API更新测试账号列表 【api2】</p><ul><li>Eastblue自行维护一份测试账号列表，理论上不需要查询接口，也不需要增删接口  </li></ul></li></ul></li></ul></li><li><p>实验开启</p><ul><li>负责人在Eastblue上开启该实验</li><li>Eastblue通过API通知游戏后端开启该实验 【api3】<ul><li>如果该实验并没有准备好，需返回“开启失败”</li></ul></li></ul></li><li><p>灰度调整</p><ul><li>负责人在Eastblue上调整各实验变体的流量占比</li><li>Eastblue通过API通知游戏后端更新实验配置信息中的流量分配方案 【api4】</li><li>调整成功后，Eastblue专门记录下调整的时间和内容</li></ul></li><li><p>实验结束</p><ul><li>负责人在Eastblue上结束该实验</li><li>Eastblue通过API通知游戏后端结束该实验 【api5】<ul><li>同时决定该实验的最终方案（即将灰度调整至 <strong>0/100</strong> 的状态）</li></ul></li></ul></li><li><p>实验归档</p><ul><li>实验结束后负责人在Eastblue上对该实验进行归档，以便日后进行系统性分析</li></ul></li><li><p>实验分析</p><ul><li>实验开启后相关人员即可在Eastblue上查看相关数据</li><li>分析目标<ul><li>留存：次留、3留、7留、30留</li><li>付费：付费率、付费人数、付费总额</li><li>追踪事件：点击次数、点击人数</li></ul></li><li>调整过灰度的实验，Eastblue会列出调整记录，由使用者选择用于分析的灰度方案</li></ul></li></ol><h3 id="三、开发说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e4%b8%89%e3%80%81%e5%bc%80%e5%8f%91%e8%af%b4%e6%98%8e" data-id="三、开发说明" class="anchor"><span>三、开发说明</span></a></h3><ol><li>实验配置信息基本格式：</li></ol><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "unique_key": "3kg5a",    //分流标识符，详见分流算法的说明
+    "deviding_rule": {
+        "bucket_sum": 100,    //流量固定分为100份，以便进行灰度调整
+        "groups": [
+            {
+                "group_key": "A",    //实验变体的标识符
+                "ratio": 40     //该变体所占流量百分比
+            },
+            {
+                "group_key": "B",
+                "ratio": 30
+            },
+            {
+                "group_key": "C",
+                "ratio": 30
+            }
+        ]
+    },
+    "tracking_event": {    //实验追踪的标志事件，需记录至log_event表
+        "event_type": "experiment",    //固定，因为log_event表中还有newer_guide等事件
+        "event_name": "3kg5a_000"    //由salt拼接而来，以确保唯一性
+    },
+    "player_filter":{    //参与实验的用户筛选条件
+        "create_time": [1555718400,1558195200], //角色创建时间的范围，值为unix时间戳
+        "server_id": [100,101,102],    //服务器id，数组
+        "attribute_lang": ["en","fr"]    //玩家语言
+        //暂无其他筛选条件，之后视需求添加
+    },
+    "test_players": [
+        {"player_id":1000546879, "group_key":"A"},
+        {"player_id":1000945775, "group_key":"B"},
+        {"player_id":1000547934, "group_key":"C"}
+    ],
+    "final_group_key": "A"    //实验结束时确定的最终使用的组别
+}</code></pre><ol start="2"><li>分流算法说明</li></ol><p>示例代码（PHP）：</p><pre v-pre="" data-lang="php"><code class="lang-php">    public function get_player_group(int $player_id, object $conf): string 
+    {
+        //step1: 对于需要固定用户实验组别的实验（新手引导等），先检查该用户是不是已经划分过组别了
+        //这部分代码由各游戏根据具体测试的功能自行实现，运营平台的数据统计不会受到影响
+        //同时这里还可以对配置信息做一些检查，比如：
+        // “新手引导”的测试要求全部用户参与，则parti_ratio必须为100
+
+        //step2： 检查实验是不是已经结束且设置有最终使用的组别了
+        if(!empty($conf-&gt;final_group_key)){
+            return $conf-&gt;final_group_key;
+        }
+
+        //step3: 检查用户是不是在测试账号名单中
+        if(!empty($conf-&gt;test_players)){
+            for ($i=0; $i &lt; count($conf-&gt;test_players); $i++) { 
+                if($player_id == $conf-&gt;test_players[$i]-&gt;player_id){
+                    return $conf-&gt;test_players[$i]-&gt;group_key;
+                }
+            }
+        }
+
+        //step4: 过滤不在实验目标用户范围内的用户
+        if(!empty($conf-&gt;player_filter)){
+            if(!$this-&gt;is_target_player($player_id, $conf-&gt;player_filter)){
+                return '';//返回空表示不参与实验
+            }
+        }
+
+        //step5: 根据实验分流规则计算用户的实验组别
+        $conf-&gt;deviding_rule-&gt;salt = $conf-&gt;unique_key;
+        $group_key = $this-&gt;devide_group($player_id, $conf-&gt;deviding_rule);
+
+        //step6: 对于需要固定用户实验组别的实验，记录用户划分到的组别（具体逻辑自行实现）
+        return $group_key;
+    }    
+
+    public function devide_group(int $player_id, object $rule): string 
+    {
+        //step1: 拼接 unique_key 与 player_id 为字符串，进行 md5 加密并转换为全小写
+        $md5_str = strtolower(md5($rule-&gt;salt . $player_id));
+
+        //step2: 取字符串 md5_str 的前8位，当做16进制数转换为10进制int
+        $hash_int = 0;
+        $map = [
+            '0'=&gt;0, '1'=&gt;1, '2'=&gt;2, '3'=&gt;3, 
+            '4'=&gt;4, '5'=&gt;5, '6'=&gt;6, '7'=&gt;7, 
+            '8'=&gt;8, '9'=&gt;9, 'a'=&gt;10, 'b'=&gt;11, 
+            'c'=&gt;12, 'd'=&gt;13, 'e'=&gt;14, 'f'=&gt;15
+        ];
+        $num = 8;
+
+        for ($i=0; $i&lt;$num; $i++) {
+            //php中可直接将字符串当做数组来获取其指定位置的字符
+            $hash_int += pow(16, $num - 1 - $i) * $map[$md5_str[$i]];
+        }
+
+        //step3: 对 hash_int 按流量总份数取余，获取该玩家被划分的 bucket_id
+        $bucket_id = $hash_int % $rule-&gt;bucket_sum;
+
+        //step4: 根据 bucket_id 计算该玩家被划分到的组别
+        $target = '';
+        for ($i=0; $i&lt;count($rule-&gt;groups); $i++) {
+            $bucket_id = $bucket_id - $rule-&gt;groups[$i]-&gt;ratio;
+            if($bucket_id &lt; 0){
+                $target = $rule-&gt;groups[$i]-&gt;group_key;
+                break;
+            }
+        }
+        //可添加 target 为空的异常处理
+        return $target;
+    }</code></pre><ol start="3"><li>数据验证</li></ol><table>
+<thead>
+<tr>
+<th>player_id</th>
+<th>md5_str</th>
+<th>hash_int</th>
+<th>bucket_id</th>
+<th>target</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1001415550</td>
+<td>5b47801b186c58f8ba0dcd03aec1b27d</td>
+<td>1531412507</td>
+<td>7</td>
+<td>A</td>
+</tr>
+<tr>
+<td>1001415551</td>
+<td>9082c5905605ded132c7d41ff163a396</td>
+<td>2424489360</td>
+<td>60</td>
+<td>B</td>
+</tr>
+<tr>
+<td>1001415552</td>
+<td>d7492dffaf5cf925675a0127ed4ee02b</td>
+<td>3611897343</td>
+<td>43</td>
+<td>B</td>
+</tr>
+<tr>
+<td>1001415553</td>
+<td>b598c3d00f32f3360057dc73785810a2</td>
+<td>3046687696</td>
+<td>96</td>
+<td>C</td>
+</tr>
+<tr>
+<td>1001415554</td>
+<td>8a8dfde00d117d7eac03394310d48ac1</td>
+<td>2324561376</td>
+<td>76</td>
+<td>C</td>
+</tr>
+<tr>
+<td>1001415555</td>
+<td>2133de1b6e77af24c916155a3755e9b1</td>
+<td>557047323</td>
+<td>23</td>
+<td>A</td>
+</tr>
+<tr>
+<td>1001415556</td>
+<td>45ef0101dbdf6c82e9a469cc340e9bd3</td>
+<td>1173291265</td>
+<td>65</td>
+<td>B</td>
+</tr>
+<tr>
+<td>1001415557</td>
+<td>279b6989a5dfa63895d30aba99f33901</td>
+<td>664496521</td>
+<td>21</td>
+<td>A</td>
+</tr>
+<tr>
+<td>1001415558</td>
+<td>83035d1cfd218301ac5e0195b1bb8a3a</td>
+<td>2198035740</td>
+<td>40</td>
+<td>B</td>
+</tr>
+<tr>
+<td>1001415559</td>
+<td>e071fe76a5ad5a67a4e5bef56a5f38de</td>
+<td>3765567094</td>
+<td>94</td>
+<td>C</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="sql"><code class="lang-sql">-- SQL验证：数据准确性
+SELECT player_id,
+    MD5(CONCAT('3kg5a', player_id)) as md5_str,
+    CONV(LEFT(MD5(CONCAT('3kg5a', player_id)), 8), 16, 10) as hash_int,
+    CONV(LEFT(MD5(CONCAT('3kg5a', player_id)), 8), 16, 10)%100 as bucket_id
+FROM `create_player_115` 
+WHERE player_id between 1001415550 and 1001415559
+-- SQL验证：数据均匀性
+SELECT CONV(LEFT(MD5(CONCAT('3kg5a', player_id)), 8), 16, 10)%100 as bucket_id, COUNT(1)
+FROM `create_player_115` 
+WHERE created_time&gt;unix_timestamp('2019-04-01')
+GROUP BY bucket_id</code></pre><h3 id="四、游戏数据记录相关"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E?id=%e5%9b%9b%e3%80%81%e6%b8%b8%e6%88%8f%e6%95%b0%e6%8d%ae%e8%ae%b0%e5%bd%95%e7%9b%b8%e5%85%b3" data-id="四、游戏数据记录相关" class="anchor"><span>四、游戏数据记录相关</span></a></h3><p>1.上传数据至BigQuery</p><pre v-pre="" data-lang="sql"><code class="lang-sql">    游戏新起一张实验表，直接上传BigQuery,架构：
+    表名：experiment
+
+    experiment_name        STRING    NULLABLE    --实验的unique_key
+    timestamp_mills        INTEGER    NULLABLE    
+    event_name            STRING    NULLABLE    --实验打点的类型，暂时分为两种 participation 实验参与  conversion 实验转化 之后可能增加系列行为类型。系列行为：固定格式为 action 加编号（01~99），编号间可用 - 划分阶段如：action-01 action-01-01
+    event_value            STRING    NULLABLE    --预留字段，之后可以记录额外信息，可以删除
+    kingdom_id            INTEGER    NULLABLE    
+    player_id            INTEGER    NULLABLE    
+    timestamp         TIMESTAMP    NULLABLE    
+    group_key           STRING    NULLABLE    --该玩家在该实验中的实际分组,每条记录都记录一下group_key</code></pre><p>2.记录数据至Mysql</p><pre v-pre="" data-lang="sql"><code class="lang-sql">    部分游戏不接BQ，如爱消除，实验报告可以兼容mysql数据查询。mysql表结构如下：
+    log_experiment表
+    CREATE TABLE `log_experiment` (
+        `id` bigint(15) unsigned NOT NULL AUTO_INCREMENT,  
+        `player_id` int(10) unsigned NOT NULL, 
+        `server_id` int(10) unsigned NOT NULL, 
+        `experiment_name` varchar(64) NOT NULL, --实验的unique_key
+        `event_name` varchar(64) NOT NULL,  -- 实验打点的类型，暂时分为两种 participation 实验参与  conversion 实验转化 之后可能增加系列行为类型。系列行为：固定格式为 action 加编号（01~99），编号间可用 - 划分阶段如：action-01 action-01-01
+        `event_value` varchar(255) NOT NULL, 
+        `group_key` varchar(32) NOT NULL,  -- 该玩家在该实验中的实际分组,每条记录都记录一下group_key
+        `created_at` int(10) unsigned NOT NULL, 
+        PRIMARY KEY (`id`), 
+        KEY `player_id` (`player_id`), 
+        KEY `created_at` (`created_at`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+    注意：需要平台这边将日志表和充值留存表放在同一台机器上才能查（即欧美平台查不了）</code></pre></article></section></main>
+  <script>
+    window.$docsify = {
+      name: '',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      search: 'auto',
+      plugins: [
+        function (hook, vm) {
+          hook.ready(function () {
+            mermaid.initialize({ startOnLoad: false });
+          });
+          hook.doneEach(function () {
+            mermaid.init(undefined, '.mermaid');
+          });
+        }
+      ],
+      markdown: {
+        renderer: {
+          code: function (code, lang) {
+            var html = '';
+            if (code.match(/^sequenceDiagram/) || code.match(/^graph/) || code.match(/^gantt/)) {
+              html = '<div class="mermaid">' + code + '</div>';
+            }
+            var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)
+            return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="./Eastblue-分层实验说明 - Document_files/docsify.min.js.下载"></script>
+  <script src="./Eastblue-分层实验说明 - Document_files/search.js.下载"></script>
+  <script type="text/javascript" src="./Eastblue-分层实验说明 - Document_files/mermaid.min.js.下载"></script>
+
+
+
+<div class="progress" style="opacity: 0; width: 0%;"></div></body></html>

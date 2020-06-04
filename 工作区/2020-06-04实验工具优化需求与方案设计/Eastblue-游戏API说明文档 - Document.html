@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+<!-- saved from url=(0211)http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%ba%94%e3%80%81%e5%88%86%e5%b1%82%e5%ae%9e%e9%aa%8c%e7%9b%b8%e5%85%b3%e6%8e%a5%e5%8f%a3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Eastblue-游戏API说明文档 - Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
+  <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <meta http-equiv="expires" content="0">
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./Eastblue-游戏API说明文档 - Document_files/vue.css">
+  <link rel="stylesheet" href="./Eastblue-游戏API说明文档 - Document_files/mermaid.min.css">
+<style>
+.sidebar {
+  padding-top: 0;
+}
+
+.search {
+  margin-bottom: 20px;
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.search .input-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.search .results-panel {
+  display: none;
+}
+
+.search .results-panel.show {
+  display: block;
+}
+
+.search input {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0 7px;
+  line-height: 36px;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+.search input:focus {
+  box-shadow: 0 0 5px var(--theme-color, #42b983);
+  border: 1px solid var(--theme-color, #42b983);
+}
+
+.search input::-webkit-search-decoration,
+.search input::-webkit-search-cancel-button,
+.search input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.search .clear-button {
+  width: 36px;
+  text-align: right;
+  display: none;
+}
+
+.search .clear-button.show {
+  display: block;
+}
+
+.search .clear-button svg {
+  transform: scale(.5);
+}
+
+.search h2 {
+  font-size: 17px;
+  margin: 10px 0;
+}
+
+.search a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.search .matching-post {
+  border-bottom: 1px solid #eee;
+}
+
+.search .matching-post:last-child {
+  border-bottom: 0;
+}
+
+.search p {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.search p.empty {
+  text-align: center;
+}
+
+.app-name.hide, .sidebar-nav.hide {
+  display: none;
+}</style></head>
+
+<body data-page="api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3.md" class="ready sticky">
+  <main><button class="sidebar-toggle" aria-label="Menu"><div class="sidebar-toggle-button"><span></span><span></span><span></span></div></button><aside class="sidebar"><div class="search"><div class="input-wrap">
+      <input type="search" value="" aria-label="Search text" placeholder="Type to search">
+      <div class="clear-button">
+        <svg width="26" height="24">
+          <circle cx="12" cy="12" r="11" fill="#ccc"></circle>
+          <path stroke="white" stroke-width="2" d="M8.25,8.25,15.75,15.75"></path>
+          <path stroke="white" stroke-width="2" d="M8.25,15.75,15.75,8.25"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="results-panel"></div>
+    </div><div class="sidebar-nav"><ul><li><a href="http://inner-pf.game168.com.tw/docs/#/">返回上级目录</a></li><li>Eastblue接口文档<ul><li class=""><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-游戏API说明文档</a><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b8%80%e3%80%81%e6%95%b4%e4%bd%93%e8%af%b4%e6%98%8e">一、整体说明</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e8%af%b7%e6%b1%82%e7%9a%84url%e5%9c%b0%e5%9d%80%e6%a0%bc%e5%bc%8f%ef%bc%88%e5%9f%9f%e5%90%8d%e5%92%8c%e7%ab%af%e5%8f%a3%e5%90%84%e6%b8%b8%e6%88%8f%e8%87%aa%e6%8b%9f%ef%bc%89">1. 请求的url地址格式（域名和端口各游戏自拟）</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0%e9%80%9a%e7%94%a8%e6%a0%bc%e5%bc%8f">2. 请求参数通用格式</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e6%8e%a5%e5%8f%a3%e9%80%9a%e7%94%a8%e8%bf%94%e5%9b%9e%e6%a0%bc%e5%bc%8f">3. 接口通用返回格式</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%ba%8c%e3%80%81%e6%a0%bc%e5%bc%8f%e8%af%b4%e6%98%8e">二、格式说明</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%a0%87%e5%87%86%e6%98%be%e7%a4%ba%e6%a0%bc%e5%bc%8f">1. 标准显示格式</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%87%aa%e5%ae%9a%e4%b9%89%e5%8f%82%e6%95%b0%e6%a0%bc%e5%bc%8f">2. 自定义参数格式</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b8%89%e3%80%81%e6%95%b0%e6%8d%ae%e6%9f%a5%e8%af%a2%e7%b1%bb%e6%8e%a5%e5%8f%a3">三、数据查询类接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e4%bf%a1%e6%81%af%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3">1. 游戏角色信息查询接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%89%b9%e9%87%8f%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e4%bf%a1%e6%81%af%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3">2. 批量游戏角色信息查询接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e6%b8%b8%e6%88%8f%e9%85%8d%e7%bd%ae%e8%a1%a8%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3">3. 游戏配置表查询接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e6%b8%b8%e6%88%8f%e9%85%8d%e7%bd%ae%e8%a1%a8%e5%85%b7%e4%bd%93%e5%86%85%e5%ae%b9%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3">4. 游戏配置表具体内容查询接口</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%9b%9b%e3%80%81%e6%b8%b8%e6%88%8f%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3">四、游戏自定义接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b8%b8%e6%88%8f%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e">1. 游戏自定义接口说明</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3%e7%9a%84%e9%85%8d%e7%bd%ae">2. 获取游戏自定义接口的配置</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e">3. 自定义接口参数说明</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%ae%8c%e6%95%b4%e8%8c%83%e4%be%8b">4. 完整范例</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%ba%94%e3%80%81%e6%b4%bb%e5%8a%a8%e7%ae%a1%e7%90%86%e6%8e%a5%e5%8f%a3">五、活动管理接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b4%bb%e5%8a%a8%e8%ae%be%e7%bd%ae%e6%8e%a5%e5%8f%a3">1. 活动设置接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%b4%bb%e5%8a%a8%e5%85%b3%e9%97%ad%e6%8e%a5%e5%8f%a3">2. 活动关闭接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e6%b4%bb%e5%8a%a8%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3">3. 活动查询接口</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%ad%e3%80%81%e9%82%ae%e4%bb%b6%e5%8f%91%e9%80%81%e6%8e%a5%e5%8f%a3">六、邮件发送接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e9%82%ae%e4%bb%b6%e5%8f%91%e9%80%81%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e">1. 邮件发送接口说明</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e9%82%ae%e4%bb%b6%e5%8f%91%e9%80%81%e6%8e%a5%e5%8f%a3%e8%a6%81%e6%b1%82">2. 邮件发送接口要求</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e5%8d%95%e5%8f%91%e9%82%ae%e4%bb%b6%e6%8e%a5%e5%8f%a3%e7%9a%84%e8%bf%94%e5%9b%9e%e5%80%bc%e8%a6%81%e6%b1%82">3. 单发邮件接口的返回值要求</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%ae%8c%e6%95%b4%e7%a4%ba%e4%be%8b">4. 完整示例</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b8%83%e3%80%81%e5%ae%a2%e6%9c%8d%e8%81%8a%e5%a4%a9%e7%b3%bb%e7%bb%9f%e6%8e%a5%e5%8f%a3">七、客服聊天系统接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-gm%e6%b6%88%e6%81%af%e5%9b%9e%e5%a4%8d%e7%bb%93%e6%9d%9f%e4%bc%9a%e8%af%9d%e6%8e%a5%e5%8f%a3">1. GM消息回复\结束会话接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%9c%aa%e5%9b%9e%e5%a4%8d%e7%8e%a9%e5%ae%b6%e5%88%97%e8%a1%a8%e6%8b%89%e5%8f%96%e6%8e%a5%e5%8f%a3">2. 未回复玩家列表拉取接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e8%8e%b7%e5%8f%96%e6%8c%87%e5%ae%9a%e4%b8%80%e6%89%b9%e7%8e%a9%e5%ae%b6%e5%9c%a8%e6%8c%87%e5%ae%9a%e6%97%b6%e9%97%b4%e6%ae%b5%e5%86%85%e7%9a%84%e6%b6%88%e6%81%af%e8%ae%b0%e5%bd%95">3. 获取指定一批玩家在指定时间段内的消息记录</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e6%89%b9%e9%87%8f%e5%9b%9e%e5%a4%8d%e6%b6%88%e6%81%af%e7%bb%93%e6%9d%9f%e4%bc%9a%e8%af%9d">4. 批量回复消息/结束会话</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_5-%e8%ae%be%e7%bd%aegm%e5%9c%a8%e7%ba%bf%e7%8a%b6%e6%80%81%e7%9a%84%e6%8e%a5%e5%8f%a3">5. 设置“GM在线状态”的接口</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%ab%e3%80%81%e6%89%a3%e9%99%a4%e8%ae%a2%e5%8d%95%e7%89%a9%e5%93%81%e5%bc%82%e5%b8%b8%e8%ae%a2%e5%8d%95%e5%a4%84%e7%90%86%e6%8e%a5%e5%8f%a3">八、扣除订单物品/异常订单处理接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b9%9d%e3%80%81%e6%b8%b8%e6%88%8f%e6%95%b0%e5%80%bc%e4%bf%ae%e6%94%b9%e6%8e%a5%e5%8f%a3">九、游戏数值修改接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e7%a4%ba%e4%be%8b%e9%85%8d%e7%bd%ae%ef%bc%9a">示例配置：</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e7%a4%ba%e4%be%8b%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%ef%bc%9a">示例返回结果：</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e3%80%81%e8%bf%9d%e8%a7%84%e7%ae%a1%e7%90%86%e4%b8%ad%e7%94%a8%e5%88%b0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89%e5%8a%9f%e8%83%bd%ef%bc%88%e5%8c%85%e6%8b%ac%e4%bd%86%e4%b8%8d%e9%99%90%e4%ba%8e-%e5%b0%81%e7%a6%81%ef%bc%8c%e9%87%8d%e7%bd%ae%e4%bf%a1%e6%81%af%ef%bc%89">十、违规管理中用到的自定义功能（包括但不限于 封禁，重置信息）</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e5%b0%81%e7%a6%81%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e">1. 封禁接口说明</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%b3%e4%ba%8e%e6%9c%89%e6%b2%a1%e6%9c%89ban_until_time%e5%8f%82%e6%95%b0%e7%9a%84%e8%af%b4%e6%98%8e">关于有没有<code>ban_until_time</code>参数的说明</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e9%87%8d%e7%bd%ae%e4%bf%a1%e6%81%af%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e">2. 重置信息接口说明</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%b3%e4%ba%8e%e6%9c%89%e6%b2%a1%e6%9c%89cool_time%e5%8f%82%e6%95%b0%e7%9a%84%e8%af%b4%e6%98%8e">关于有没有<code>cool_time</code>参数的说明</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%b8%80%e3%80%81%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ae%a1%e7%90%86%e6%8e%a5%e5%8f%a3">十一、服务器管理接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e5%88%87%e6%8d%a2%e6%b8%b8%e6%88%8f%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%af%b9%e5%a4%96%e6%98%be%e7%a4%ba%e7%8a%b6%e6%80%81">1. 切换游戏服务器对外显示状态</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e9%a1%b5%e6%b8%b8%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%bc%80%e6%9c%8d%e5%88%9d%e5%a7%8b%e5%8c%96">2. 页游服务器开服初始化</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%8e%b7%e5%8f%96%e5%af%bc%e6%b5%81%e5%9c%b0%e5%8c%ba%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8">3. 市场导流设置-获取导流地区状态列表</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%8e%b7%e5%8f%96%e5%af%bc%e6%b5%81%e8%af%ad%e8%a8%80%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8">4. 市场导流设置-获取导流语言状态列表</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_5-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%ae%be%e7%bd%ae%e5%af%bc%e6%b5%81%e5%9c%b0%e5%8c%ba%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8">5. 市场导流设置-设置导流地区状态列表</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_6-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%ae%be%e7%bd%ae%e5%af%bc%e6%b5%81%e8%af%ad%e8%a8%80%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8">6. 市场导流设置-设置导流语言状态列表</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%ba%8c%e3%80%81%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e5%ae%9e%e6%97%b6%e5%9c%a8%e7%ba%bf%e4%ba%ba%e6%95%b0%e6%8e%a5%e5%8f%a3">十二、获取游戏实时在线人数接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%ae%9e%e6%97%b6%e5%9c%a8%e7%ba%bf%e4%ba%ba%e6%95%b0">1. 获取游戏服务器实时在线人数</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%b8%89%e3%80%81%e6%95%8f%e6%84%9f%e8%af%8d%e6%8a%a5%e8%ad%a6%e6%8e%a5%e5%8f%a3">十三、敏感词报警接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b7%bb%e5%8a%a0%e5%92%8c%e5%88%a0%e9%99%a4%e6%95%8f%e6%84%9f%e8%af%8d%e6%8e%a5%e5%8f%a3">1. 添加和删除敏感词接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e7%9a%84%e6%95%8f%e6%84%9f%e8%af%8d%e6%8a%a5%e8%ad%a6%e8%ae%b0%e5%bd%95%e6%8e%a5%e5%8f%a3">2. 获取游戏的敏感词报警记录接口</a></li></ul><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e5%9b%9b%e3%80%81%e8%8e%b7%e5%8f%96%e4%b8%be%e6%8a%a5%e4%bf%a1%e6%81%af%e6%8e%a5%e5%8f%a3">十四、获取举报信息接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e8%8e%b7%e5%8f%96%e4%b8%be%e6%8a%a5%e4%bf%a1%e6%81%af%e6%8e%a5%e5%8f%a3">1. 获取举报信息接口</a></li></ul><li class="active"><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%ba%94%e3%80%81%e5%88%86%e5%b1%82%e5%ae%9e%e9%aa%8c%e7%9b%b8%e5%85%b3%e6%8e%a5%e5%8f%a3">十五、分层实验相关接口</a></li><ul class="app-sub-sidebar"><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e5%88%9b%e5%bb%ba%e5%ae%9e%e9%aa%8c%e6%8e%a5%e5%8f%a3">1. 创建实验接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%9b%b4%e6%94%b9%e5%ae%9e%e9%aa%8c%e6%8e%a5%e5%8f%a3">2. 更改实验接口</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e5%88%a0%e9%99%a4%ef%bc%88%e6%92%a4%e9%94%80%ef%bc%89%e5%ae%9e%e9%aa%8c">3. 删除（撤销）实验</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%bc%80%e5%90%af%e5%ae%9e%e9%aa%8c">4. 开启实验</a></li><li><a class="section-link" href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_5-%e7%bb%93%e6%9d%9f%e5%ae%9e%e9%aa%8c">5. 结束实验</a></li></ul></ul></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-MasterAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-MasterAPI说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%88%86%E5%B1%82%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E">Eastblue-分层实验说明</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%9F%A5%E8%AF%A2%E7%B3%BB%E7%BB%9FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-查询系统API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E5%A4%A7%E6%95%B0%E6%8D%AEAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">Eastblue-大数据API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/164%E6%9C%8D%E5%8A%A1%E5%99%A8-Eastblue%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">164服务器-Eastblue API说明文档</a></li></ul></li><li>官网接口文档<ul><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E6%B8%B8%E6%88%8F%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8API%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3">游戏后端服务器API对接文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AF%E5%85%B6%E4%BB%96API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端其他API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AF%E8%B4%A6%E5%8F%B7%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端账号相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AF%E6%94%AF%E4%BB%98%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端支付相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E9%A1%B5%E6%B8%B8%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">页游前端相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%B9%B3%E5%AE%89%E9%93%B6%E8%A1%8C%E6%94%AF%E4%BB%98%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">平安银行支付相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E5%90%8E%E7%AB%AFEastblue%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网后端Eastblue相关API说明文档</a></li><li><a href="http://inner-pf.game168.com.tw/docs/#/api/%E5%AE%98%E7%BD%91%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3API%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3">官网网站相关API说明文档</a></li></ul></li><li>数据平台文档<ul><li><a href="http://inner-pf.game168.com.tw/docs/#/api/BigQuery-%E5%B9%B3%E5%8F%B0%E5%AE%98%E7%BD%91%E7%9B%B8%E5%85%B3%E8%A1%A8%E8%AF%B4%E6%98%8E">BigQuery-平台官网相关表说明</a></li></ul></li></ul></div></aside><section class="content"><article class="markdown-section" id="main"><p>[TOC]</p><h1 id="eastblue-游戏-api-说明文档"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=eastblue-%e6%b8%b8%e6%88%8f-api-%e8%af%b4%e6%98%8e%e6%96%87%e6%a1%a3" data-id="eastblue-游戏-api-说明文档" class="anchor"><span>Eastblue-游戏 API 说明文档</span></a></h1><p>（编辑 by 圣魈、毛二力、雨花辞）</p><h2 id="一、整体说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b8%80%e3%80%81%e6%95%b4%e4%bd%93%e8%af%b4%e6%98%8e" data-id="一、整体说明" class="anchor"><span>一、整体说明</span></a></h2><h3 id="_1-请求的url地址格式（域名和端口各游戏自拟）"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e8%af%b7%e6%b1%82%e7%9a%84url%e5%9c%b0%e5%9d%80%e6%a0%bc%e5%bc%8f%ef%bc%88%e5%9f%9f%e5%90%8d%e5%92%8c%e7%ab%af%e5%8f%a3%e5%90%84%e6%b8%b8%e6%88%8f%e8%87%aa%e6%8b%9f%ef%bc%89" data-id="_1-请求的url地址格式（域名和端口各游戏自拟）" class="anchor"><span>1. 请求的url地址格式（域名和端口各游戏自拟）</span></a></h3><p>页游示例：  <a href="http://127.0.0.1:3328/100.server" target="_blank">http://127.0.0.1:3328/100.server</a>  </p><p>手游（H5）示例： <a href="http://127.0.0.1/neweb/v1" target="_blank">http://127.0.0.1:80/neweb/v1</a>  </p><h3 id="_2-请求参数通用格式"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0%e9%80%9a%e7%94%a8%e6%a0%bc%e5%bc%8f" data-id="_2-请求参数通用格式" class="anchor"><span>2. 请求参数通用格式</span></a></h3><p>json格式，由<strong>mid</strong>和<strong>payload</strong>两部分组成，mid确定接口协议号，payload传递具体参数，格式形如：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 99001, //0x182b9
+    "payload": {
+        "param1": 123456,       //int类型
+        "param2": "XXXXX",      //string类型
+        "param3": [1,2,3,4,5,6],    //array类型
+        "param4": {         //object类型
+            "subparam1": 654321,
+            "subparam2": "XXXXXXX"
+        }
+    }
+}</code></pre><h3 id="_3-接口通用返回格式"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e6%8e%a5%e5%8f%a3%e9%80%9a%e7%94%a8%e8%bf%94%e5%9b%9e%e6%a0%bc%e5%bc%8f" data-id="_3-接口通用返回格式" class="anchor"><span>3. 接口通用返回格式</span></a></h3><p>(1) 处理成功时统一返回<strong>error_code 0</strong>（格式如下）  </p><p>接口的个性化返回参数放在data（具体参见每个接口的说明）中，无个性化参数时，data为空或省略。</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 99001, //0x182b9，请求的接口协议号
+    "data": {/** 格式按照 二、1 标准显示格式 **/}
+}</code></pre><p>(2) 处理失败时统一返回<strong>非零的 error_code</strong>（格式如下）  </p><p>error_code可以自行定义，但<strong>请务必在error_msg中简要说明错误原因或类型</strong>。特殊情况下需要同时返回额外的参数，请统一放在data中，无额外参数时data为空或省略。</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 5, 
+    "error_msg": "player dose not exist", 
+    "mid": 99001, //0x182b9，请求的接口协议号
+    "data": {/** 格式按照 二、1 标准显示格式 **/}
+}</code></pre><h2 id="二、格式说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%ba%8c%e3%80%81%e6%a0%bc%e5%bc%8f%e8%af%b4%e6%98%8e" data-id="二、格式说明" class="anchor"><span>二、格式说明</span></a></h2><h3 id="_1-标准显示格式"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%a0%87%e5%87%86%e6%98%be%e7%a4%ba%e6%a0%bc%e5%bc%8f" data-id="_1-标准显示格式" class="anchor"><span>1. 标准显示格式</span></a></h3><blockquote>
+<p>Eastblue系统内部定义了一套标准显示格式，用来简单的编辑数据以便前端进行展示</p><p>主要用于游戏API返回结果显示，一些非特定页面的显示（如参数的快照）</p></blockquote>
+<p><strong>Sta对象：以下简称为 StaObject</strong></p><p><strong>StaObject中的关键键值对</strong></p><table>
+<thead>
+<tr>
+<th>键值(*表示必选)</th>
+<th>值的示例</th>
+<th>值的格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>staname(*)</td>
+<td>"玩家ID"</td>
+<td>string</td>
+<td>用来表示stavalue的标签/字段名称</td>
+</tr>
+<tr>
+<td>stavalue(*)</td>
+<td>1000001234</td>
+<td>见stavalue说明</td>
+<td>用于显示的值</td>
+</tr>
+<tr>
+<td>statype</td>
+<td>"timestamp"</td>
+<td>见statype说明</td>
+<td>用来对显示的值特殊化处理</td>
+</tr>
+<tr>
+<td>staorder</td>
+<td>10</td>
+<td>number</td>
+<td>用来对object中的StaObject按值从小到大排序</td>
+</tr>
+</tbody></table>
+<p><strong>statype说明</strong></p><table>
+<thead>
+<tr>
+<th>statype</th>
+<th>stavalue类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>"timestamp"</td>
+<td>number</td>
+<td>会把number类型的stavalue按照服务器时区，转换成时间字符串：1535760000 =&gt; "2018-09-01"</td>
+</tr>
+<tr>
+<td>"server"</td>
+<td>number</td>
+<td>会把<code>stavalue</code>作为服务器ID去找对应的服务器，并转换为服务器名称进行显示</td>
+</tr>
+</tbody></table>
+<p><strong>stavalue说明</strong></p><table>
+<thead>
+<tr>
+<th>stavalue类型</th>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>number</td>
+<td>123283.91</td>
+<td>会直接显示在页面上</td>
+</tr>
+<tr>
+<td>string</td>
+<td>"asd123kj@a"</td>
+<td>会直接显示在页面上</td>
+</tr>
+<tr>
+<td>StaObject</td>
+<td>{"staname": "数量", stavalue": 123}</td>
+<td>会按标准显示格式显示</td>
+</tr>
+<tr>
+<td>object<stdobject></stdobject></td>
+<td>{"a": StaObject, "b": StaObject}</td>
+<td>会把值里的StaObject排序后进行显示</td>
+</tr>
+<tr>
+<td>array</td>
+<td>[any_1, any_2, ...]</td>
+<td>会依次显示any_1, any_2, ...</td>
+</tr>
+</tbody></table>
+<h4 id="数据展示规则："><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e6%95%b0%e6%8d%ae%e5%b1%95%e7%a4%ba%e8%a7%84%e5%88%99%ef%bc%9a" data-id="数据展示规则：" class="anchor"><span>数据展示规则：</span></a></h4><blockquote>
+<p><strong>概念定义：</strong></p><blockquote>
+<p>短字符串：长度小于80的字符串</p><p>长字符串：长度不小于80的字符串</p><p>简单元素：整数、浮点数、字符串</p><p>复杂元素：数组或对象</p></blockquote>
+<p><strong>对象展示规则：</strong></p><ol><li><p>键值为简单元素，则直接以<code>键名: 键值</code>的格式显示于一行内</p></li><li><p>键值为复杂元素，则在<code>键名:</code>后换行显示<code>键值</code></p><p>例如：</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "name": {
+        "staname": "玩家昵称",
+        "stavalue": "ceshi",
+        "staorder": 0
+    },
+    "player_id": {
+        "staname": "玩家ID",
+        "stavalue": 100000001,
+        "staorder": 1
+    },
+    "bag": {
+        "staname": "背包",
+        "stavalue": {
+            "items": {
+                "staname": "物品列表",
+                "stavalue": ["物品1", "物品2"]
+            },
+            "golds": {
+                "staname": "金币",
+                "stavalue": 1000
+            }
+        },
+        "staorder": 3
+    },
+    "friends": {
+        "staname": "好友列表",
+        "stavalue": [
+            {
+                "name": {"staname": "名称", "stavalue": "Alice"}, 
+                "player_id": {"staname": "玩家ID", "stavalue": 1000000002}
+            },
+            {
+                "name": {"staname": "名称", "stavalue": "Bob"}, 
+                "player_id": {"staname": "玩家ID", "stavalue": 1000000004}
+            }
+        ],
+        "staorder": 4
+    },
+    "created_at": {
+        "staname": "创建时间",
+        "stavalue": 1535760000,
+        "statype": "timestamp",
+        "staorder": 999
+    }
+}</code></pre><p>显示为：</p><pre v-pre="" data-lang="json"><code class="lang-json">玩家昵称: ceshi  
+玩家ID: 100000001  
+背包:  
+   金币: 1000  
+   物品列表:   
+       物品1,物品2
+好友列表:  
+   | 名称  | 玩家ID      |
+   | Alice | 1000000002    |
+   | Bob   | 1000000004    |
+创建时间: 2018-09-01 08:00:00</code></pre></li></ol><p><strong>数组展示规则：</strong></p><ol><li><p>每个数组元素为简单元素，则以<code>,</code>分隔拼接为字符串显示于一行</p><p>例如： <code>[123456789,987654321,258369147]</code></p><p>显示为：<code>123456789,987654321,258369147</code></p></li><li><p>每个数组元素为数组，则整体显示为无序列表，每个子数组按规则1、3来处理</p><p>例如：</p><pre v-pre="" data-lang="json"><code class="lang-json">[
+   [123456,987654,258369],
+   [156789,987321,369147]
+]</code></pre><p>显示为：</p><ul><li>123456,987654,258369</li><li>156789,987321,369147</li></ul></li><li><p>每个数组元素为对象，则显示为表格，表格字段为所有元素的属性字段的并集</p><p>例如（这里直接以转化为标准显示格式前的原始json举例，不影响理解）：</p><pre v-pre="" data-lang="json"><code class="lang-json">[
+    {"name":"Alice", "player_id":1000000002, "level": 10},
+    {"name":"Bob", "player_id":1000000009, "level": 15}
+]</code></pre><p>显示为：</p><pre v-pre="" data-lang="json"><code class="lang-json">| name  | player_id  | level |  
+| Alice | 1000000002 | 10    |  
+| Bob   | 1000000004 | 15    |  </code></pre></li><li><p>每个元素为对象，且对象属性中嵌套着数组，则整体仍显示为表格，但嵌套的数组不再转化为表格，而是以无序列表形式显示</p><p>例如：</p><pre v-pre="" data-lang="json"><code class="lang-json">[
+   {
+       "player_id":1000000002, 
+       "result": {
+           "status": "success",
+           "item_list": [
+               {"item_id":"gold", "num":100},
+               {"item_id":10001, "num":500}
+           ]
+       }
+   },
+   {
+       "player_id":1000000009, 
+       "result": {
+           "status": "fail",
+           "error": "player doesn't exist"
+       }
+   }
+]</code></pre><p>显示为：</p><p><img src="./Eastblue-游戏API说明文档 - Document_files/1544538138469.png" data-origin="assets/1544538138469.png" alt="1544538138469"></p><p>附加说明：当单元格 <strong>高度超过 5 行</strong> 或 <strong>宽度超过单元格平均宽度的 3 倍</strong> 时，需要省略显示单元格的部分内容，同时添加 <strong>详情</strong> 按钮（点击时弹窗显示完整内容）</p></li></ol></blockquote>
+<h3 id="_2-自定义参数格式"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%87%aa%e5%ae%9a%e4%b9%89%e5%8f%82%e6%95%b0%e6%a0%bc%e5%bc%8f" data-id="_2-自定义参数格式" class="anchor"><span>2. 自定义参数格式</span></a></h3><h4 id="参数关键键值说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8f%82%e6%95%b0%e5%85%b3%e9%94%ae%e9%94%ae%e5%80%bc%e8%af%b4%e6%98%8e" data-id="参数关键键值说明" class="anchor"><span>参数关键键值说明</span></a></h4><blockquote>
+<p>打 <strong>(*)</strong> 表示必填参数</p></blockquote>
+<ul><li><h5 id="required-bool"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=required-bool" data-id="required-bool" class="anchor"><span><strong>required (*) : <code>bool</code></strong></span></a></h5><p>  用来表示参数是否可以为空，会在eastblue后端进行检查</p><pre v-pre="" data-lang="json"><code class="lang-json">  "required": true    // 表示该参数不能为空
+  "required": false    // 表示该参数可以为空</code></pre></li><li><h5 id="data_type-string"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=data_type-string" data-id="data_type-string" class="anchor"><span><strong>data_type (*) : <code>string</code></strong></span></a></h5><p>  用来表示参数的值类型，会在eastblue的后端进行检查以及转换</p><pre v-pre="" data-lang="json"><code class="lang-json">  // 基本参数类型
+  "data_type": "int"            // 表示参数为整型
+  "data_type": "float"        // 表示参数为浮点型
+  "data_type": "string"        // 表示参数为字符串
+  "data_type": "bool"            // 表示参数为布尔型
+  "data_type": "timestamp"    // 表示参数为日期时间字符串(前端), UNIX时间戳(游戏端)
+
+  // 复杂参数类型
+  "data_type": "array"        // 表示参数为数组
+  "data_type": "array<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>"    // 表示参数为整型数组
+  "data_type": "object"        // 表示参数为一个对象</code></pre></li><li><h5 id="placeholder-string"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=placeholder-string" data-id="placeholder-string" class="anchor"><span><strong>placeholder (*) : <code>string</code></strong></span></a></h5><p>  用来表示参数说明或者提示信息</p><pre v-pre="" data-lang="json"><code class="lang-json">  "placeholder": "请输入玩家ID"    // 会显示在页面的对应组件上</code></pre></li><li><h5 id="display_type-string"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=display_type-string" data-id="display_type-string" class="anchor"><span><strong>display_type : <code>string</code></strong></span></a></h5><p>  主要用来表示参数的前端组件类型</p><p>  每种 display_type 都有其适用的 data_type</p><p>  在data_type为 <strong>基本参数类型 <code>int|float|string|bool|timestamp</code></strong> 时必须存在</p><pre v-pre="" data-lang="json"><code class="lang-json">  "display_type": "text",        // 表示文本框，适用于 int|float|string
+  "display_type": "textarea",    // 表示文本域，适用于 string|array
+
+  "display_type": "select",        // 表示带搜索的单选下拉框，适用于 int|float|string|bool，必须有data_source
+  "display_type": "multiselect",    // 表示多选下拉框，适用于 array，必须有data_source
+
+  "display_type": "date",        // 表示日期选择插件，适用于 timestamp
+  "display_type": "datetime"    // 表示日期时间选择查看，适用于 timestamp
+
+  "display_type": "file",     // 表示文本域，选择一个本地文本文件 
+                              // 将读取文件得到的数据以字符串的形式展示在文本域中</code></pre></li><li><h5 id="default_value-any"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=default_value-any" data-id="default_value-any" class="anchor"><span><strong>default_value : <code>any</code></strong></span></a></h5><p>用来表示前端组件的默认填充值</p><pre v-pre="" data-lang="json"><code class="lang-json">"default_value": 100,
+"default_value": "hello"
+
+// "data_type": "timestamp" 的特殊处理
+"default_value": "2018-10-10 08:00:00"      // 服务器时区的时间
+"default_value": "2018-10-10 08:00:00+0800" // 东八区的时间
+"default_value": "[curr_date] 08:00:00" // 服务器时区的当天8点
+"default_value": "[curr_date] 12:00:00+0000" // 零时区的当天12点</code></pre></li><li><h5 id="data_source-stringarray"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=data_source-stringarray" data-id="data_source-stringarray" class="anchor"><span><strong>data_source : <code>string|array</code></strong></span></a></h5><p>  用来表示参数的数据源，在display_type为 <strong>选择器 <code>select|multiselect</code></strong> 时必须存在</p><p>  新增支持在<code>$my_table:...:...</code>后面添加过滤表达式，用<code>?</code>字符分隔：<code>$my_table:...?type = 1</code></p><h6 id="过滤表达式支持的数据类型："><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e8%bf%87%e6%bb%a4%e8%a1%a8%e8%be%be%e5%bc%8f%e6%94%af%e6%8c%81%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%ef%bc%9a" data-id="过滤表达式支持的数据类型：" class="anchor"><span><strong>过滤表达式支持的数据类型：</strong></span></a></h6></li></ul><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数字</td>
+<td>100.1</td>
+<td></td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>'agent', "agent"</td>
+<td>单引号和双引号都可以</td>
+</tr>
+<tr>
+<td>变量</td>
+<td>type</td>
+<td>实际上是data_source中当前行对象的type属性</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="undefined"><code class="lang-undefined">######  **过滤表达式支持的运算符：**</code></pre><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>()</td>
+<td>括号运算符</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&lt;, &lt;=, &gt;, &gt;=</td>
+<td>比较大小的运算符</td>
+</tr>
+<tr>
+<td>2</td>
+<td>==, !=</td>
+<td>比较是否相等的运算符</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ll, &amp;&amp;</td>
+<td>布尔运算符, <strong>这里markdown不支持竖线，所以用了两个<code>l</code>来表示!</strong></td>
+</tr>
+</tbody></table>
+<p><strong>例子：</strong></p><pre v-pre="" data-lang="json"><code class="lang-json">// 使用 eastblue 提供的数据源
+"data_source": "$server_list",  // 会把游戏服务器ID作为value, 服务器名称作为name
+"data_source": "$main_server_list",  // 主服列表
+
+// 使用"三、3 游戏配置表"中的数据源
+"data_source": "$my_table",     // 仅指定表名, 实际等于 $my_table:id:name
+"data_source": "$my_table:my_id:",  // 实际等于 $my_table:my_id:name
+"data_source": "$my_table::my_desc",// 实际等于 $my_table:id:my_desc    
+
+"data_source": "$my_table:my_id:my_desc",       // 指定表名和name, value字段的别名
+"data_source": "$my_table:my_id:my_desc+my_desc_2", // 获取字段时进行拼接 
+"data_source": "$my_table:...? (my_id &lt; 1000) || (my_type=='foo')", // 使用表达式进行过滤
+
+// 直接填写数据源
+"data_source": [        
+    {"name": "选项1", "value": 10001},
+    {"name": "选项2", "value": 10002}
+]
+
+// 字段拼接：
+// value_alias和name_alias都可以做拼接。拼接的时候需要拼接的字段名以'+'分隔。
+"data_source": "$table:my_value:my_name+my_value",
+// 拼接之后
+"data_source": [
+    {
+        "value": table[my_value],
+        "name": table[my_name] + ":" + table[my_value]
+    }, ...
+]</code></pre><ul><li><h5 id="staorder-int"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=staorder-int" data-id="staorder-int" class="anchor"><span><strong>staorder : <code>int</code></strong></span></a></h5><p>  用来进行参数排序，值小的会排在前面</p><p>  没有填写staorder时，不保证参数的顺序</p><pre v-pre="" data-lang="json"><code class="lang-json">      "staorder": 1    // 该参数会排在所有(staorder &gt; 1)的参数的前面</code></pre></li><li><h5 id="component-params-object"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=component-params-object" data-id="component-params-object" class="anchor"><span><strong>component : <code>{params: object}</code></strong></span></a></h5><p>用来描述复杂参数类型 <strong>data_type = <code>array|object</code></strong> 时，参数的子参数</p><pre v-pre="" data-lang="json"><code class="lang-json">// data_type为object时
+"item": {   // params
+    "data_type": "object",
+    "component": {
+        "params": {
+            "item_id": {"data_type": "int", ...},
+            "number": {"data_type": "int", ...}
+        }
+    }, ...
+}
+
+// data_type为array时
+"items": {  // params
+    "data_type": "array",
+    "component": {
+        "params": {
+            "item_id": {"data_type": "int", ...}
+        }
+    }, ...
+}
+"items": [  // 对应的请求格式
+    {"item_id": 11111},
+    {"item_id": 22222},
+    ...
+]</code></pre></li><li><h5 id="repeat-intstring"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=repeat-intstring" data-id="repeat-intstring" class="anchor"><span><strong>repeat : <code>int|string</code></strong></span></a></h5><p>用来表示复杂参数类型 <strong>data_type = array</strong> 时，子参数的重复次数</p><pre v-pre="" data-lang="json"><code class="lang-json">"repeat": 1                // 表示参数重复1次
+"repeat": 5                // 表示参数重复5次
+"repeat": "user-defined" // 表示参数可重复任意次</code></pre><p>例子</p><pre v-pre="" data-lang="json"><code class="lang-json">// params 
+"ids": {
+    "repeat": 2,
+    "component": {
+        "params": {
+            "id": {"data_type": "int", ...}
+        }
+    }, ...
+}
+// payload
+"ids": [
+    {"id": 123123},
+    {"id": 2222}
+]</code></pre></li><li><h5 id="max_length-int-65535"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=max_length-int-65535" data-id="max_length-int-65535" class="anchor"><span><strong>max_length : <code>int</code> = 65535</strong></span></a></h5><p>用来限制参数最大长度, 长度通过json_encode(转义unicode和反斜杠)之后的字节数进行计算</p><p>默认最大长度65535</p><pre v-pre="" data-lang="json"><code class="lang-json">"max_length": 256
+{
+    "a": 123,       // length = 3
+    "a": "1",       // length = 3 
+    "a": [1],       // length = 3
+    "a": {"x": 1}   // length = 7
+}</code></pre></li></ul><h4 id="参数基本结构示例"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8f%82%e6%95%b0%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84%e7%a4%ba%e4%be%8b" data-id="参数基本结构示例" class="anchor"><span>参数基本结构示例</span></a></h4><pre v-pre="" data-lang="json"><code class="lang-json">// 简单参数示例一，data_source为自定义数据
+// 设置接口的对应请求参数格式 "option":1
+"option": {      //键名为参数名称
+    "required": true,    //该参数是否必填（存在且不为空值，0和false除外）
+    "data_type": "int",      //数据类型，包括int、float、string、bool、array、object、timestamp
+    "display_type": "select",    //页面展示类型（单选下拉框），详见下文表格
+    "placeholder": "请选择新增或删除",   //页面提示信息（输入框的placeholder）
+    "staorder": 1, // 可选，根据这个值进行同级别中的排序
+    "data_source": [ //下拉框的填充数据，以数组形式给出所有可选值（默认选中第一个）
+        {"value":1, "name":"新增GM"},
+        {"value":0, "name":"删除GM"},
+    ],          
+}
+// 简单参数示例二，日期时间
+// 设置接口的对应请求参数格式 "start_time":1529400139
+"start_time": {       //键名为参数名称
+    "required": true,       //该参数是否必填（存在且不为空值，0和false除外）
+    "data_type": "timestamp",   //数据类型，包括int、float、string、bool、array、object、timestamp
+    "display_type": "datetime",  //页面展示类型（日期时间选择插件），详见下文表格
+    "placeholder": "请设置活动开始时间",   //页面提示信息
+    "staorder": 2, // 可选，根据这个值进行同级别中的排序
+    "data_source": "",     //无填充数据
+}
+// 简单参数示例三，data_source为约定好的特殊数据
+// 设置接口的对应请求参数格式 "server_ids":[1,2,3,4,5]
+"server_ids": {       //键名为参数名称
+    "required": true,       //该参数是否必填（存在且不为空值，0和false除外）
+    "data_type": "array",   //数据类型，包括int、float、string、bool、array、object、timestamp
+    "display_type": "multiselect",  //页面展示类型（多选下拉框），详见下文表格
+    "placeholder": "请选择服务器",   //页面提示信息（输入框的placeholder）
+    "data_source": "$server_list",  //下拉框的填充数据，以约定好的特殊数据进行填充，详见后文说明
+}
+// 简单参数示例四，自定义输入的数组数据（非复选框）
+// 设置接口的对应请求参数格式 "item_id":[1001,2002,30003,4004]
+"item_id": {       //键名为参数名称
+    "required": true,       //该参数是否必填（存在且不为空值，0和false除外）
+    "data_type": "array",   //数据类型，包括int、float、string、bool、array、object、timestamp
+    "repeat": "4", //重复4次，还可以是 user-defined（参见复杂参数示例三）
+    "display_type": "text",  //单行文本输入框，详见下文表格
+    "placeholder": "请输入一组物品id",   //页面提示信息
+    "data_source": "",  //无填充数据
+}
+// 简单参数示例，通过textarea输入多个int
+"player_ids": {
+    "required": true,
+    "data_type": "array<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>",
+    "display_type": "textarea",
+    "placeholder": "请输入玩家id"
+}
+
+// 复杂参数（使用组件来定义object类型的数据）示例一
+// 设置接口的对应请求参数格式 "award":{"itme_id":100001,"num":2}
+"award": {
+    "required": true,
+    "data_type": "object",   //不重复的component需对应data_type为object
+    "placeholder": "请设置奖励",    //参数说明或提示信息
+    "component": {      //组件，将多个参数构建为一个整体
+        "params": {
+            "itme_id": {
+                "required": true,
+                "data_type": "int",
+                "display_type": "text",    
+                "placeholder": "奖励物品id",
+                "data_source": "",
+            },
+            "num": {
+                "required": true,
+                "data_type": "int",
+                "display_type": "text",
+                "placeholder": "奖励物品数量",
+                "data_source": "",
+            },
+        },
+    },
+}
+// 复杂参数示例二
+// 设置接口的对应请求参数格式 "award":[{"itme_id":101,"num":2},{"itme_id":102,"num":1},{"itme_id":103,"num":3}]
+"award": {
+    "required": true,    
+    "data_type": "array",     //component可重复时，data_type必须为array
+    "placeholder": "请设置奖励",    //参数说明或提示信息
+    "repeat": "3",     //重复3次
+    "component": {       //组件，将多个参数构建为一个整体
+        "params": {
+           //同复杂参数示例一，省略
+        },
+    },
+}
+// 复杂参数示例三
+// 设置接口的对应请求参数格式 "award":[{"itme_id":101,"num":2},{"itme_id":102,"num":1},…]
+"award": {
+    "required": true,  //自定义组件重复次数时，要求至少有一个组件对象请设置required为true，否则为false
+    "data_type": "array",    //component可重复时，data_type必须为array
+    "repeat": "user-defined",    //重复次数由用户自定义
+    "component": {      //组件，将多个参数构建为一个整体
+        "params": {
+            //同复杂参数示例一，省略
+        },
+    },
+}</code></pre><h2 id="三、数据查询类接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b8%89%e3%80%81%e6%95%b0%e6%8d%ae%e6%9f%a5%e8%af%a2%e7%b1%bb%e6%8e%a5%e5%8f%a3" data-id="三、数据查询类接口" class="anchor"><span>三、数据查询类接口</span></a></h2><h3 id="_1-游戏角色信息查询接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e4%bf%a1%e6%81%af%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3" data-id="_1-游戏角色信息查询接口" class="anchor"><span>1. 游戏角色信息查询接口</span></a></h3><p>请求参数：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10001, //65537
+    "payload": {//根据传入的参数，该接口有三种处理逻辑
+        // 1.根据 player_id 进行查询（条件：player_id非空）
+        "player_id": 123456, //int类型，角色id
+
+        // 2.根据 player_name 进行查询（条件：player_id为空，player_name非空）
+        "player_name": "TEST001", //string类型；角色当前的昵称（非曾用名）
+        "server_id": 10, //int类型；分服的游戏使用；服务器id
+
+        // 3.根据 uid + server_id + platform_id 进行查询（条件：player_id和player_name均为空）
+        "uid": "1234567890", //string类型；角色当前的昵称（非曾用名）
+        "server_id": 10,     //int类型；分服的游戏使用；服务器id
+        "platform_id": 61    //int类型；分平台的游戏使用；平台id
+    }
+}</code></pre><p>返回结果（仅给出成功返回，data数据需要转换为<em>标准显示格式</em>）：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0,
+    "error_msg": "",
+    "mid": XXXXX, //请求的接口协议号
+    "data": {   //格式详见“一”中“返回数据的标准显示格式”
+        //以下为必需字段（请各游戏统一使用指定的字段名称）
+        "player_id": {"staname":"玩家id", "stavalue":123456},
+        "player_name": {"staname":"玩家昵称", "stavalue":"TEST001"},
+        "uid": {"staname":"官网账号id", "stavalue":"1234567890"},
+        "server_id": {"staname":"服务器id", "stavalue":1}, //不分服的游戏可选择忽略该字段
+        "platform_id": {"staname":"平台id", "stavalue":1}, //不分平台的游戏忽略该字段
+        "is_online": {"staname":"是否在线", "stavalue":true}, //
+        //以下为游戏自定义字段（字段名称仅作参考）
+        //涉及时间戳的数据建议转换成日期时间格式，以增加数据的可读性
+        "gold": {"staname":"金条", "stavalue":20000},
+        "army": {"staname":"战斗力", "stavalue":123456999},
+        "created_at": {"staname":"创建时间", "stavalue":1537950704, "statype": "timestamp"}
+    }
+}</code></pre><h3 id="_2-批量游戏角色信息查询接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%89%b9%e9%87%8f%e6%b8%b8%e6%88%8f%e8%a7%92%e8%89%b2%e4%bf%a1%e6%81%af%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3" data-id="_2-批量游戏角色信息查询接口" class="anchor"><span>2. 批量游戏角色信息查询接口</span></a></h3><ul><li>批量查询接口可以一次查询多个<code>player_id</code>对应的角色信息</li><li>批量查询接口可以设置需要查询的字段，字段和<code>游戏角色信息查询接口</code>中的自定义的字段保持一致就行</li></ul><p>请求参数：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10018, // 65560
+    "payload": {
+        "player_ids": [123456, 123457, 123458],     // 玩家ID组成的数组
+        "required_fields": ["player_id", "gold", "army"],   // 需要的字段, 和0x10001的字段一致
+    }
+}</code></pre><p>返回结果（仅给出成功返回）: </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0,
+    "error_msg": "",
+    "mid": 0x10018,
+    "data": [
+        {
+            "player_id": 123456,
+            "gold": 20000,
+            "army": 143123
+        },
+        {
+            "player_id": 123457,
+            "gold": 651354,
+            "army": 45753419
+        },
+        {
+            "player_id": 123458,
+            "gold": 72342,
+            "army": 12312
+        },
+    ]
+}</code></pre><h3 id="_3-游戏配置表查询接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e6%b8%b8%e6%88%8f%e9%85%8d%e7%bd%ae%e8%a1%a8%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3" data-id="_3-游戏配置表查询接口" class="anchor"><span>3. 游戏配置表查询接口</span></a></h3><p>请求参数：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10002, //65538
+    "payload": {/** 不需要参数 **/}
+}</code></pre><p>返回结果（data数据<em>不需要</em> 转换为<em>标准显示格式</em>）：   </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0,
+    "error_msg": "",
+    "mid": XXXXX, //请求的接口协议号
+    "data": [    //每条数据表示一张表，version为该表的最新版本号
+        {"table_name":"item", "version":"1528263690"},
+        {"table_name":"giftbag", "version":"1528263699"}
+    ]
+}</code></pre><p>说明：Eastblue每天定时根据版本号更新各表数据的缓存</p><h3 id="_4-游戏配置表具体内容查询接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e6%b8%b8%e6%88%8f%e9%85%8d%e7%bd%ae%e8%a1%a8%e5%85%b7%e4%bd%93%e5%86%85%e5%ae%b9%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3" data-id="_4-游戏配置表具体内容查询接口" class="anchor"><span>4. 游戏配置表具体内容查询接口</span></a></h3><p>请求参数：   </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10003, //65539
+    "payload": {
+        "table_name": "itme" //表名
+    }
+}</code></pre><p>返回结果（data数据<em>不需要</em> 转换为<em>标准显示格式</em>）：   </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0,
+    "error_msg": "",
+    "mid": XXXXX, //请求的接口协议号
+    "data": [    //要求每条数据都以json格式（带字段名称）给出
+        {"item_id":10001001, "name":"銅錢"},
+        {"item_id":10001002, "name":"元寶"},
+        {"item_id":10001003, "name":"體力"}
+    ]
+}</code></pre><p>说明：Eastblue会在请求成功（error_code为0）时将data缓存下来。缓存会定期根据表的版本号进行更新，或由运营通过操作主动刷新某个表的缓存。</p><h2 id="四、游戏自定义接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%9b%9b%e3%80%81%e6%b8%b8%e6%88%8f%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3" data-id="四、游戏自定义接口" class="anchor"><span>四、游戏自定义接口</span></a></h2><h3 id="_1-游戏自定义接口说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b8%b8%e6%88%8f%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e" data-id="_1-游戏自定义接口说明" class="anchor"><span>1. 游戏自定义接口说明</span></a></h3><blockquote>
+<p>为了拓展Eastblue作为运营和游戏之间的中间层的作用，方便游戏对一些运营交互所用到的接口进行自定义，由平台为主整理归纳了一套游戏自定义设置的接口，任何游戏只要实现了接口中的内容就能方便地在Eastblue中添加自己的功能。</p></blockquote>
+<p><strong>游戏自定义接口通用调用流程：</strong></p><ol><li>Eastblue 事先通过游戏自定义接口获得由游戏定义的接口信息，并渲染至页面上。</li><li>运营操作 Eastblue 中由游戏自定义接口生成的页面。</li><li>Eastblue 调用游戏接口，符合接口定义的参数将被发送至游戏端。 </li></ol><p><strong>游戏自定义接口的组别</strong></p><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>group</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用户处理类</td>
+<td>handle</td>
+<td>封禁\举报等</td>
+</tr>
+<tr>
+<td>数据查询类</td>
+<td>query</td>
+<td></td>
+</tr>
+<tr>
+<td>运营设置类</td>
+<td>operation</td>
+<td>礼包等</td>
+</tr>
+<tr>
+<td>活动设置接口</td>
+<td>activity</td>
+<td>主要用于有起止时间的活动的管理</td>
+</tr>
+<tr>
+<td>数据修改接口</td>
+<td>modify</td>
+<td>游戏数值修改管理</td>
+</tr>
+<tr>
+<td>单发邮件接口</td>
+<td>target-mail</td>
+<td>单发邮件</td>
+</tr>
+<tr>
+<td>群发邮件接口</td>
+<td>multi-mail</td>
+<td>群发邮件</td>
+</tr>
+<tr>
+<td>封禁管理接口</td>
+<td>banned</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>游戏自定义接口的要求</strong></p><ul><li>游戏自定义接口的参数及返回值必须符合游戏自定义接口的定义</li><li>Eastblue中某些功能会对group和params有所要求：</li></ul><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>group</th>
+<th>params</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>活动管理</td>
+<td>activity</td>
+<td>server_ids, activity_id, start_time, end_time</td>
+</tr>
+<tr>
+<td>单发邮件</td>
+<td>target-mail</td>
+<td>title, content, player_ids, attachment</td>
+</tr>
+<tr>
+<td>群发邮件</td>
+<td>multi-mail</td>
+<td>title, content, server_ids, attachment</td>
+</tr>
+<tr>
+<td>数值修改</td>
+<td>modify</td>
+<td>player_ids</td>
+</tr>
+<tr>
+<td>封禁管理</td>
+<td>banned</td>
+<td>player_ids, is_banned [, ban_until_time]</td>
+</tr>
+</tbody></table>
+<h3 id="_2-获取游戏自定义接口的配置"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3%e7%9a%84%e9%85%8d%e7%bd%ae" data-id="_2-获取游戏自定义接口的配置" class="anchor"><span>2. 获取游戏自定义接口的配置</span></a></h3><p>请求参数：  </p><blockquote>
+<p>参数中的 group 用来区分功能大类，现有分类： activity, mail, handle, gm, query, market, operation, modify, banned</p></blockquote>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10005,          // 65541
+    "payload": {
+        "group": "activity"
+    }
+}</code></pre><p>返回结果例子：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0,
+    "error_msg": "",
+    "mid": 0x10005,
+    "data": {
+        "call-foo": {
+            "name": "测试接口",
+            "group": "operation",
+            "mid": 0x123456,    // 协议号自定
+            "params": {
+                "content": {    // 符合"二、2 自定义参数格式"的内容
+                    "required": true, 
+                    "data_type": "string", 
+                    "display_type": "input",
+                    "placeholder": "内容"
+                }
+            }
+        }
+    }
+}</code></pre><p>对应的游戏接口例子：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{   // 请求
+    "mid": 0x123456,
+    "payload": {
+        "content": "foo"
+    }
+}
+
+{   // 返回值
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 0x123456,
+    "data": {
+        "staname": "返回值",
+        "stavalue": "bar!"
+    }
+}</code></pre><h3 id="_3-自定义接口参数说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a5%e5%8f%a3%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e" data-id="_3-自定义接口参数说明" class="anchor"><span>3. 自定义接口参数说明</span></a></h3><blockquote>
+<p>打 <strong>(*)</strong> 表示必填参数</p></blockquote>
+<ul><li><h5 id="mid-int"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=mid-int" data-id="mid-int" class="anchor"><span><strong>mid (*) : <code>int</code></strong></span></a></h5><p>  用来表示该自定义功能的mid，eastblue请求游戏时以mid来唯一标识这是哪一个功能</p><pre v-pre="" data-lang="json"><code class="lang-json">      "mid": 0x11000</code></pre></li><li><h5 id="name-string"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=name-string" data-id="name-string" class="anchor"><span><strong>name (*) : <code>string</code></strong></span></a></h5><p>  用来表示功能的名称</p><pre v-pre="" data-lang="json"><code class="lang-json">      "name": "设置GM"</code></pre></li><li><h5 id="params-object"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=params-object" data-id="params-object" class="anchor"><span><strong>params (*) : <code>object</code></strong></span></a></h5><p>用来表示功能需要的自定义参数。格式见"二、2 游戏自定义参数"</p><pre v-pre="" data-lang="json"><code class="lang-json">    "params": {
+        "server_id": {
+            "required": true,
+            "data_type": "int",
+            "display_type": "select",
+            "placeholder": "请选择服务器",
+            "data_source": "$server_list",
+        }
+    }</code></pre></li><li><h5 id="autofill-bool-false"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=autofill-bool-false" data-id="autofill-bool-false" class="anchor"><span><strong>autofill : <code>bool</code> = false</strong></span></a></h5><ul><li><p>不填写时默认值为<code>false</code></p></li><li><p>值为<code>true</code>时，会自动填入运营上一次操作的数据</p></li><li><p>填入的数据不会覆盖<code>default_value</code></p><pre v-pre="" data-lang="json"><code class="lang-json">  "autofill": false
+  "autofill": true   // 会自动填入该接口上一次操作的数据</code></pre></li></ul></li><li><h5 id="can_timed-bool-false"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=can_timed-bool-false" data-id="can_timed-bool-false" class="anchor"><span><strong>can_timed : <code>bool</code> = false</strong></span></a></h5><ul><li><p>不填写时默认值为<code>false</code></p></li><li><p>值为<code>true</code>时，对应接口可以进行定时执行的操作</p><pre v-pre="" data-lang="json"><code class="lang-json">  "can_timed": true   // 运营可以通过eastblue定时操作接口</code></pre></li></ul></li><li><h5 id="group-string"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=group-string" data-id="group-string" class="anchor"><span><strong>group : <code>string</code></strong></span></a></h5><pre v-pre="" data-lang="json"><code class="lang-json">      "group": "banned"   // 封禁管理接口</code></pre></li><li><h5 id="feature_set-string-name"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=feature_set-string-name" data-id="feature_set-string-name" class="anchor"><span><strong>feature_set : <code>string</code> = name</strong></span></a></h5><ul><li><p>不填写时默认值为<code>name</code></p></li><li><p>用来表示功能属于哪一个集合，以及集合的名称</p></li><li><p>相同<code>feature_set</code>的功能会合并成一个集合</p><pre v-pre="" data-lang="json"><code class="lang-json">  "feature_set": "GM管理"</code></pre></li></ul></li></ul><p><img src="./Eastblue-游戏API说明文档 - Document_files/1537952117324.png" data-origin="assets/1537952117324.png" alt="1537952117324"></p><h3 id="_4-完整范例"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%ae%8c%e6%95%b4%e8%8c%83%e4%be%8b" data-id="_4-完整范例" class="anchor"><span>4. 完整范例</span></a></h3><ul><li><p>请求参数</p><pre v-pre="" data-lang="json"><code class="lang-json">{   // 请求
+  "mid": 0x10005,
+  "payload": {}
+}</code></pre></li><li><p>返回值</p><pre v-pre="" data-lang="json"><code class="lang-json">{   // 返回值
+  "error_code": 0, 
+  "error_msg": "", 
+  "mid": 0x10005,
+  "data": {
+      // GM管理
+      "check_gm": {
+          "name": "查看GM",
+          "feature_set": "GM管理",
+          "mid": 0x11001, //69633，该接口查看当前设置的协议号
+          "group": "operation",
+          "params": {
+              "server_id": {
+                  "required": true,       //必填参数
+                  "data_type": "int",       //数据类型为int
+                  "display_type": "select",  //页面展示类型为单选下拉框
+                  "placeholder": "请选择服务器",   //页面提示信息
+                  "data_source": "$server_list",  //下拉框的填充数据使用官网的server_list
+              }
+          }
+      },
+      "set_gm": {
+          "name": "设置GM",
+          "feature_set": "GM管理",
+          "mid": 0x11002,
+          "group": "operation",
+          "params": {    //设置接口需要的参数（单独设置，跟查看接口的参数没有关联，即使是同一个参数名称）
+              "server_ids": {
+                  "required": true,       //必填参数
+                  "data_type": "array",       //数据类型为array
+                  "display_type": "multiselect",  //页面展示类型为复选下拉框
+                  "placeholder": "请选择服务器",   //页面提示信息
+                  "staorder": 1,  // 可选，根据这个值进行同级别中的排序
+                  "data_source": "$server_list",  //下拉框的填充数据使用官网的server_list
+              },
+              "player_id": {
+                  "required": true,
+                  "data_type": "int",
+                  "display_type": "text",     //页面展示类型为文本框
+                  "placeholder": "请输入玩家的player_id",  //页面提示信息
+                  "staorder": 2,  // 可选，根据这个值进行同级别中的排序
+              },
+              "option": {
+                  "required": true,
+                  "data_type": "int",
+                  "display_type": "select",       //页面展示类型为单选下拉框
+                  "placeholder": "请选择新增或删除",      //页面提示信息
+                  "staorder": 3,  // 可选，根据这个值进行同级别中的排序
+                  "data_source": [    //填充数据直接以数组形式给出
+                      {"value":1, "name":"新增GM"},
+                      {"value":0, "name":"删除GM"},
+                  ]
+              }
+          }
+      },
+
+      // 版本公告管理
+      "announcement": {
+          "name": "查看版本公告",
+          "feature_set": "版本公告管理",
+          "mid": 0x11003, //69635，该接口查看当前设置的协议号
+          "group": "operation",
+          "params": {
+              "server_id": {
+                  "required": true,       //必填参数
+                  "data_type": "int",       //数据类型为int
+                  "display_type": "select",  //页面展示类型为单选下拉框
+                  "placeholder": "请选择服务器",   //页面提示信息
+                  "data_source": "$server_list",  //下拉框的填充数据使用官网的server_list
+              }
+          }
+      },
+      "announcement-update": {
+          "name": "更新版本公告",
+          "feature_set": "版本公告管理",
+          "mid": 0x11004, //69635，该接口查看当前设置的协议号
+          "group": "operation",
+          "params": {
+              "server_ids": {
+                  "required": true,       //必填参数
+                  "data_type": "array",       //数据类型为array
+                  "display_type": "multiselect",  //页面展示类型为复选下拉框
+                  "placeholder": "请选择服务器",   //页面提示信息
+                  "data_source": "$server_list",  //下拉框的填充数据使用官网的server_list
+              },
+              "total_title": {
+                  "required": true,
+                  "data_type": "string",
+                  "display_type": "text",   //页面展示类型为文本框
+                  "placeholder": "总标题",  //页面提示信息
+              },
+              "version": {
+                  "required": true,
+                  "data_type": "int",
+                  "display_type": "text",          //页面展示类型为文本框
+                  "placeholder": "版本号（只显示版本号最大的公告）",      //页面提示信息
+              },
+              "list": {
+                  "required": true,
+                  "data_type": "array",
+                  "repeat": "user-defined", //重复次数由用户自定义
+                  "placeholder": "公告列表", 
+                  "component": {      //组件，将多个参数构建为一个整体
+                      "params": {
+                          "title": {
+                              "required": true,
+                              "data_type": "string",
+                              "display_type": "text",    //页面展示类型为文本框
+                              "placeholder": "公告标题",  //页面提示信息
+                          },
+                          "url": {
+                              "required": true,
+                              "data_type": "string",
+                              "display_type": "text",    //页面展示类型为文本框
+                              "placeholder": "跳转链接",  //页面提示信息
+                          },
+                          "content": {
+                              "required": true,
+                              "data_type": "string",
+                              "display_type": "textarea",   //页面展示类型为文本域
+                              "placeholder": "输入内容，以换行分割，每行开头请勿输入数字",
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}</code></pre></li></ul><h2 id="五、活动管理接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%ba%94%e3%80%81%e6%b4%bb%e5%8a%a8%e7%ae%a1%e7%90%86%e6%8e%a5%e5%8f%a3" data-id="五、活动管理接口" class="anchor"><span>五、活动管理接口</span></a></h2><h3 id="_1-活动设置接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b4%bb%e5%8a%a8%e8%ae%be%e7%bd%ae%e6%8e%a5%e5%8f%a3" data-id="_1-活动设置接口" class="anchor"><span>1. 活动设置接口</span></a></h3><blockquote>
+<p>接口说明：</p><ol><li>活动接口参数名称和类型要求与下面的示例完全一致，即固定 <strong>activity_id、server_ids、start_time、end_time</strong> 四个参数</li><li>支持有多个活动设置接口（主要考虑到对页游的兼容，手游/H5一般就一个接口），Eastblue这边会依据 <strong>(mid, activity_id, server_id)</strong> 进行活动设置的互斥判断，即同一个活动在同一个服只能有一条未结束的活动记录</li><li>mid各游戏自拟，要求加入自定义接口配置，分组为 <strong>activity</strong> （本来应该固定mid的，但由于该接口是从之前自定义接口的形式演进过来的，为了兼容就不固定了）</li></ol></blockquote>
+<p>示例配置：</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "activitu_group_sample_1": {
+        "name": "一般活动组",
+        "mid": 123456, //协议号各游戏自拟
+        "group": "activity",
+        "params": {
+            "activity_id": {    // activity_id 现在限定为只能是 select
+                "required": true,
+                "data_type": "int",
+                "display_type": "select",
+                "placeholder": "选择活动",
+                "data_source": [
+                    {"name": "活动1", "value": 10001},
+                    {"name": "活动2", "value": 10002},
+                ]
+            },
+            "server_ids": {
+                "required": true,
+                "data_type": "array",
+                "display_type": "multiselect",
+                "placeholder": "请选择服务器",
+                "data_source": "$server_list"
+            },
+            "start_time": {
+                "required": true,
+                "data_type": "timestamp",
+                "display_type": "datetime",
+                "placeholder": "请设置活动开始时间"
+            },
+            "end_time": {
+                "required": true,
+                "data_type": "timestamp",
+                "display_type": "datetime",
+                "placeholder": "请设置活动结束时间"
+            }
+        }
+    }
+}</code></pre><h3 id="_2-活动关闭接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%b4%bb%e5%8a%a8%e5%85%b3%e9%97%ad%e6%8e%a5%e5%8f%a3" data-id="_2-活动关闭接口" class="anchor"><span>2. 活动关闭接口</span></a></h3><p>协议号：<code>0x1000a</code></p><p>参数：</p><ul><li><p>activity_id：<code>int</code>，必填， 活动id</p></li><li><p>server_ids : <code>array</code>，必填， 一组服务器ID</p></li><li><p>mid：<code>int</code>，可选，仅适用于有多个活动设置接口的游戏（详见上文说明）</p></li></ul><p>示例：</p><pre v-pre="" data-lang="json"><code class="lang-json">{   /** 发送给游戏服务器的请求 **/
+    "mid": 0x1000a,
+    "payload": {
+        "activity_id": 101,
+        "server_ids": [1,2,3,4,5,101,102,103,104,105]
+    }
+}
+
+{   /** 返回值 **/
+    "error_code": 0, 
+    "error_msg": "", 
+    "data": []
+}</code></pre><h3 id="_3-活动查询接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e6%b4%bb%e5%8a%a8%e6%9f%a5%e8%af%a2%e6%8e%a5%e5%8f%a3" data-id="_3-活动查询接口" class="anchor"><span>3. 活动查询接口</span></a></h3><p>协议号：<code>0x10010</code></p><blockquote>
+<p> 用于查询某个游戏服务器当前所有活动的状态</p></blockquote>
+<p>参数：</p><ul><li>server_id : <code>int</code> 服务器ID</li></ul><p>示例：</p><pre v-pre="" data-lang="json"><code class="lang-json">{   /** 发送给游戏服务器的请求 **/
+    "mid": 0x10010,
+    "payload": {
+        "server_id": 1
+    }
+}
+
+{   /** 返回值 **/
+    "error_code": 0, 
+    "error_msg": "", 
+    "data": [
+        [
+            "start_time": 1542597563,
+            "end_time": 1542597563,
+            "activity_id": 10001,
+            "is_open": 1
+        ],
+        ...
+    ]
+}</code></pre><h2 id="六、邮件发送接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%ad%e3%80%81%e9%82%ae%e4%bb%b6%e5%8f%91%e9%80%81%e6%8e%a5%e5%8f%a3" data-id="六、邮件发送接口" class="anchor"><span>六、邮件发送接口</span></a></h2><h3 id="_1-邮件发送接口说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e9%82%ae%e4%bb%b6%e5%8f%91%e9%80%81%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e" data-id="_1-邮件发送接口说明" class="anchor"><span>1. 邮件发送接口说明</span></a></h3><blockquote>
+<p>为了效率等各方面着想，邮件发送接口分为群发邮件和单发邮件。</p><p>邮件的自定义参数也分为群发的参数和单独发送的参数。</p><p>邮件群发的自定义参数和单发的自定义参数原则上应该有一定的区别，例如群发邮件时可能会按照设备、语言等进行过滤；而单发邮件时主要考虑附件奖励、引导跳转等。</p></blockquote>
+<h3 id="_2-邮件发送接口要求"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e9%82%ae%e4%bb%b6%e5%8f%91%e9%80%81%e6%8e%a5%e5%8f%a3%e8%a6%81%e6%b1%82" data-id="_2-邮件发送接口要求" class="anchor"><span>2. 邮件发送接口要求</span></a></h3><p>Eastblue会先通过接口 <strong>四-2.获取游戏自定义接口的配置</strong> 来获取“群发邮件”和“单发邮件”两个接口的配置信息，请求参数如下：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10005,          // 65541
+    "payload": {}
+}</code></pre><p>示例返回结果：    </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0,
+    "error_msg": "",
+    "mid": 0x10005,
+    "data": {
+        "target-mail": {
+            "name": "单发邮件",
+            "mid": XXXXXX,// 协议号自定
+            "group": "target-mail",
+            "params": {
+                "title": {
+                    "required": true,
+                    "data_type": "string",
+                    "display_type": "text",
+                    "placeholder": "邮件标题"
+                },
+                "content": {
+                    "required": true, 
+                    "data_type": "string", 
+                    "display_type": "text",
+                    "placeholder": "邮件正文"
+                },
+                "player_ids": {
+                    "required": true,
+                    "data_type": "array<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>",
+                    "display_type": "textarea",
+                    "placeholder": "输入玩家ID"
+                },
+                "attachment": {
+                    "required": false,
+                    "data_type": "object",
+                    "placeholder": "附件",
+                    "component": {
+                        "params": {
+                            ...{//附件内容由各游戏根据支持的物品类型（道具、货币、礼包等）自拟 
+                        }
+                    }
+                },
+                ...{/** 游戏额外自定义参数 **/}
+            }
+        },
+        "multi-mail": {
+            "name": "群发邮件",
+            "mid": XXXXXX,// 协议号自定
+            "group": "multi-mail",
+            "params": {
+                "title": {/** 和上面的一致 **/},
+                "content": {/** 和上面的一致 **/},
+                "server_ids": {
+                    "required": true,
+                    "data_type": "array",
+                    "display_type": "multiselect",
+                    "placeholder": "选择服务器",
+                    "data_source": "$server_list"
+                },
+                "attachment": {/** 和上面的一致 **/},
+                ...{/** 游戏额外自定义参数 **/}
+            }
+        }
+    }
+}</code></pre><h3 id="_3-单发邮件接口的返回值要求"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e5%8d%95%e5%8f%91%e9%82%ae%e4%bb%b6%e6%8e%a5%e5%8f%a3%e7%9a%84%e8%bf%94%e5%9b%9e%e5%80%bc%e8%a6%81%e6%b1%82" data-id="_3-单发邮件接口的返回值要求" class="anchor"><span>3. 单发邮件接口的返回值要求</span></a></h3><blockquote>
+<p>单发邮件接口调用之后要求返回成功和失败的玩家id，便于运营人员能在Eastblue后台上直观地看到发送结果和处理错误信息</p></blockquote>
+<pre v-pre="" data-lang="json"><code class="lang-json">{   // 返回值
+    "error_code": 0, 
+    "error_msg": "", 
+    "data": {
+        "success": {
+            "staname": "success",
+            "stavalue": [1000000100, 1000000102]    // 填写成功的player_id
+        },
+        "fail": {
+            "staname": "fail",
+            "stavalue": [1000000231]        // 填写失败的player_id
+        },
+        ...     // 额外信息
+    }
+}</code></pre><h3 id="_4-完整示例"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%ae%8c%e6%95%b4%e7%a4%ba%e4%be%8b" data-id="_4-完整示例" class="anchor"><span>4. 完整示例</span></a></h3><p>发送给游戏后台的请求参数： </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10005,          // 65541
+    "payload": {}
+}</code></pre><p>游戏后台的返回结果：</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0,
+    "error_msg": "",
+    "mid": 0x10005,
+    "data": {
+        "target-mail": {
+            "name": "单发邮件",
+            "mid": 0x999999,        // 协议号自定
+            "group": "target-mail",
+            "params": {
+                // ...{/** 和上面的 data.target-mail.params 一样 **/},
+                "attachment": {
+                    "required": false,
+                    "data_type": "object",
+                    "placeholder": "附件",
+                    "component": {
+                        "params": {
+                            "gift_id": {
+                                "required": false,
+                                "data_type": "int",
+                                "display_type": "select",
+                                "placeholder": "选择礼包",
+                                "staorder": 1, // 可选，根据这个值进行同级别中的排序
+                                "data_source": "$gift:table_id:desc" // 这个data_source可自定义
+                            },
+                            "items": {
+                                "required": false,
+                                "data_type": "array",
+                                "placeholder": "添加物品",
+                                "repeat": "user-defined",
+                                "staorder": 2, // 可选，根据这个值进行同级别中的排序
+                                "component": {
+                                    "params": {
+                                        "item_id": {
+                                            "required": true,
+                                            "data_type": "int",
+                                            "display_type": "select",
+                                            "placeholder": "选择物品",
+                                            "data_source": "$item:item_id:item_name"    // 这个data_source可自定义
+                                        },
+                                        "number": {
+                                            "required": true,
+                                            "data_type": "int",
+                                            "display_type": "text",
+                                            "placeholder": "数量"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "buffs": {
+                    "required": true,
+                    "data_type": "int",
+                    "display_type": "multiselect",
+                    "placeholder": "获得buff",
+                    "staorder": 1,  // 可选，根据这个值进行同级别中的排序
+                    "data_source": [
+                        {"name": "attack", "value": 100},
+                        {"name": "defence", "value": 101}
+                    ]
+                },
+                "redirect": {
+                    "required": true,
+                    "data_type": "string",
+                    "display_type": "input",
+                    "staorder": 3,  // 可选，根据这个值进行同级别中的排序
+                    "placeholder": "引导跳转url"
+                },
+                "is_star": {
+                    "required": true,
+                    "data_type": "bool",
+                    "display_type": "select",
+                    "placeholder": "是否为星标邮件",
+                    "data_source": [
+                        {"name": "是", "value": true},
+                        {"name": "否", "value": true}
+                    ]
+                }
+            }
+        },
+        "multi-mail": {
+            "group": "multi-mail",
+            /** 和上面的 data.multi-mail 一样 **/
+        }
+    }
+}</code></pre><p><strong>运营通过Eastblue发给游戏的格式：</strong>  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x999999,
+    "payload": {
+        "title": "奖励邮件",
+        "content": "恭喜你XX在XX活动中XXX，获得XXXX",
+        "player_ids": [1000000100, 1000000102, 1000000231],
+        "attachment": {
+            "gift_id": 1001,
+            "items": [
+                {"item_id": 1000, "number": 3},
+                {"item_id": 1020, "number": 1},
+            ]
+        },
+        "buffs": [100, 101],
+        "redirect": "www.xxxgames.com/congratulations",
+        "is_star": true
+    }
+}</code></pre><pre v-pre="" data-lang="json"><code class="lang-json">{   // 返回值
+    "error_code": 0, 
+    "error_msg": "", 
+    "data": {
+        "success": {
+            "staname": "success",
+            "stavalue": [1000000100, 1000000102]
+        },
+        "fail": {
+            "staname": "fail",
+            "stavalue": [1000000231]
+        }
+    }
+}</code></pre><h2 id="七、客服聊天系统接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b8%83%e3%80%81%e5%ae%a2%e6%9c%8d%e8%81%8a%e5%a4%a9%e7%b3%bb%e7%bb%9f%e6%8e%a5%e5%8f%a3" data-id="七、客服聊天系统接口" class="anchor"><span>七、客服聊天系统接口</span></a></h2><h3 id="_1-gm消息回复结束会话接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-gm%e6%b6%88%e6%81%af%e5%9b%9e%e5%a4%8d%e7%bb%93%e6%9d%9f%e4%bc%9a%e8%af%9d%e6%8e%a5%e5%8f%a3" data-id="_1-gm消息回复结束会话接口" class="anchor"><span>1. GM消息回复\结束会话接口</span></a></h3><blockquote>
+<p>此接口主要用于将客服回复玩家消息推送至游戏接口  </p><p>请求URL: 见整体说明中请求的url地址格式</p><p>注意：当消息msg_format为img表示图片消息时，message与游戏接口推送图片消息字符串一致(json字符串)，详情见案例。</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10006</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">player_id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">玩家player_id</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">gm_user_id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">GM身份标识</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">dialog_status</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">标识会话状态</td>
+<td align="center">replied-回复, closed-关闭</td>
+</tr>
+<tr>
+<td align="center">msg_data_list</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">会话内容</td>
+<td align="center">见下方说明</td>
+</tr>
+<tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">init</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">platform_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">平台id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>关于msg_data_list的说明：  </p><ol><li>一般情况下数组中只有一个元素（即一条消息），只有在图文嵌套的情况下会有多个元素</li><li>当 dialog_status 为 closed 时（即结束会话）， msg_data_list 可能为空（表示不带消息直接结束），也可能不为空（表示要先发送消息然后顺带结束会话）。 msg_data_list 为空时游戏不需要再自动发一句配置好的结束语，因为 Eastblue 有要求结束会话前的最后一条消息一定是GM的消息。</li></ol></blockquote>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10006, //65542
+    "payload": {
+        "game_id": 97,
+        "platform_id": 61,
+        "player_id": 123456,
+        "gm_user_id": 336,
+        "dialog_status": "replied", //replied-回复,closed-关闭
+        "msg_data_list": [
+            {
+                "msg_format":"text",  // text-文本内容,img-图片
+                "message":"你好，请问有什么可以帮助您的吗？"
+            },
+            {
+                "msg_format":"img",
+                "message":'{"width":200,"height":200,"img":"http://mafiaimg.xunmenginc.com/gm-img/b778b2878acfcb6887c97388515b90c6"}'
+            }
+        ]      
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65542, //0x10006，请求的接口协议号
+    "data": {
+        "gm_ids":[10,11]   //发送请求时msg_data_list每条消息的gm_id集合,与消息位置一 一对应
+    }
+}</code></pre><h3 id="_2-未回复玩家列表拉取接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%9c%aa%e5%9b%9e%e5%a4%8d%e7%8e%a9%e5%ae%b6%e5%88%97%e8%a1%a8%e6%8b%89%e5%8f%96%e6%8e%a5%e5%8f%a3" data-id="_2-未回复玩家列表拉取接口" class="anchor"><span>2. 未回复玩家列表拉取接口</span></a></h3><blockquote>
+<p>此接口主要用于平台从各游戏拉取未回复玩家列表进行遗漏信息更新
+(unreplied_list玩家ID集合中ID不重复)</p><p>请求URL: 见整体说明中请求的url地址格式 </p><p>请求方式: post  </p><p>mid: 统一固定为 0x10007</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">start_time</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">拉取起始时间</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">end_time</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">拉取结束时间</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">init</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">platform_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">平台id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10007, //65543
+    "payload": {
+        "game_id": 97,
+        "platform_id": 61,
+        "start_time": 1536749152,
+        "end_time": 1536749180,
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65543, //0x10007,请求的接口协议号
+    "data": {
+        "unreplied_list": [ //未回复玩家ID列表
+            1000389494,1000389495
+        ]
+    }
+}</code></pre><h3 id="_3-获取指定一批玩家在指定时间段内的消息记录"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e8%8e%b7%e5%8f%96%e6%8c%87%e5%ae%9a%e4%b8%80%e6%89%b9%e7%8e%a9%e5%ae%b6%e5%9c%a8%e6%8c%87%e5%ae%9a%e6%97%b6%e9%97%b4%e6%ae%b5%e5%86%85%e7%9a%84%e6%b6%88%e6%81%af%e8%ae%b0%e5%bd%95" data-id="_3-获取指定一批玩家在指定时间段内的消息记录" class="anchor"><span>3. 获取指定一批玩家在指定时间段内的消息记录</span></a></h3><blockquote>
+<p>此接口主要用于获取未回复玩家在指定时间段内的消息记录，以便补充消息推送可能遗漏的消息。</p><p>当某条消息为GM所回复消息时,返回值数组中gm_user_id为发送消息时的传值,若某条消息为玩家所发送，则gm_user_id值为0、玩家昵称也可传空。</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10008</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">player_ids</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">玩家ID集合</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">start_time</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">消息起始时间</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">end_time</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">消息结束时间</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">init</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">platform_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">平台id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10008, //65544
+    "payload": {
+        "game_id": 97,
+        "platform_id": 61,
+        "player_ids": [1000392381,1000384930,1000389494], // 需要获取的玩家ID集合
+        "start_time": 1536749152,
+        "end_time": 1536749152,
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65544, //0x10008,请求的接口协议号
+    "data": [
+        {
+            "game_id": 97,
+            "game_server_id":1,
+            "gm_id":1,
+            "player_id": 1000392381,
+            "gm_user_id": 0,
+            "player_name": "XXXX",
+            "message": "XXXXXXXXXXXX",
+            "msg_type": 0,
+            "msg_format": "text",
+            "send_time": "1536749152"
+        },
+        {
+            "game_id": 97,
+            "game_server_id":1,
+            "gm_id":2,
+            "player_id": 1000392381,
+            "gm_user_id": 336,
+            "player_name": "",
+            "message": "XXXXXXXXXXXX",
+            "msg_type": 0,
+            "msg_format": "text",
+            "send_time": "1536749152"
+        }
+    ]
+}</code></pre><h3 id="_4-批量回复消息结束会话"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e6%89%b9%e9%87%8f%e5%9b%9e%e5%a4%8d%e6%b6%88%e6%81%af%e7%bb%93%e6%9d%9f%e4%bc%9a%e8%af%9d" data-id="_4-批量回复消息结束会话" class="anchor"><span>4. 批量回复消息/结束会话</span></a></h3><blockquote>
+<p>此接口主要有两个用途：</p><ol><li>”排队管理“功能中GM过滤出垃圾消息后批量结束这些玩家的会话；</li><li>系统GM在检查到某些特定情况（比如玩家联系储值失败）时主动给玩家发一句询问消息。  </li></ol><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10011</p></blockquote>
+<p>请求参数：    </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">player_ids</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">玩家player_id集合</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">gm_user_id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">GM身份标识</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">dialog_status</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">标识会话状态</td>
+<td align="center">replied-回复, closed-关闭</td>
+</tr>
+<tr>
+<td align="center">msg_data_list</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">会话内容</td>
+<td align="center">详见“1. GM消息回复\结束会话接口”的说明</td>
+</tr>
+<tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">init</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">platform_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">平台id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10011, //65553
+    "payload": {
+        "game_id": 97,
+        "platform_id": 61,
+        "player_ids": [1000374358,1000378124,1000384930],
+        "gm_user_id": 336,
+        "dialog_status": "replied", //replied-回复,closed-关闭
+        "msg_data_list": [
+            {
+                "msg_format":"text",  // text-文本内容,img-图片
+                "message":"你好，请问有什么可以帮助您的吗？"
+            },
+            {
+                "msg_format":"img",
+                "message":'{"width":200,"height":200,"img":"http://mafiaimg.xunmenginc.com/gm-img/b778b2878acfcb6887c97388515b90c6"}'
+            }
+        ]      
+    }
+}</code></pre><p>返回结果：    </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65553, //0x10011，请求的接口协议号
+    "data": [//将单个回复接口返回的data组合成数组即可
+        {"player_id"=&gt;1000374358,"gm_ids":[10,11]},
+        {"player_id"=&gt;1000378124,"gm_ids":[101,102]},
+        {"player_id"=&gt;1000384930,"gm_ids":[1011,1012]}
+    ]
+}</code></pre><h3 id="_5-设置gm在线状态的接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_5-%e8%ae%be%e7%bd%aegm%e5%9c%a8%e7%ba%bf%e7%8a%b6%e6%80%81%e7%9a%84%e6%8e%a5%e5%8f%a3" data-id="_5-设置gm在线状态的接口" class="anchor"><span>5. 设置“GM在线状态”的接口</span></a></h3><blockquote>
+<p>接口用途：  </p><ul><li>GM不在线（下班）期间，玩家给GM发消息时游戏自动回复“目前不在GM服务时间内，请在XX:XX至XX:XX关注GM的回复”（这句话由游戏自行配置于表中，具体内容找运营商定）。</li><li>Eastblue会在运营设置的时间段内检测“是否所有GM均已从客服聊天系统下线”，是的话自动调用该接口设置“GM在线状态”为 0 ，设置的时间段结束时再次调用该接口设置“GM在线状态”为 1 。</li></ul><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post </p><p>mid: 统一固定为 0x10012</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">online_status</td>
+<td align="center">是</td>
+<td align="center">bool</td>
+<td align="center">GM在线状态</td>
+<td align="center">false-不在线, true-在线</td>
+</tr>
+<tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">init</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">platform_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">平台id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">attribute_lang</td>
+<td align="center">否</td>
+<td align="center">string</td>
+<td align="center">玩家归属语言</td>
+<td align="center">多语言游戏才会用到</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>现有多语言游戏（截至2018-12-19）：  </p><ul><li>黑道风云 ["zh","en","fr","de","ja","ru","ko","es","tr"]</li><li>黑道风云h5 ["zh","en","de","fr","ja"]</li><li>原始人 ["en","zh"]</li><li>学妹2 ["zh","en"]</li></ul></blockquote>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10012, //65554
+    "payload": {
+        "game_id": 97,
+        "platform_id": 61,
+        "online_status": true,
+        "attribute_lang": "zh"  
+    }
+}</code></pre><p>返回结果</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65554, //0x10012，请求的接口协议号
+    "data": [] //目前不需要data，直接通过error_code判断是否设置成功
+}</code></pre><h2 id="八、扣除订单物品异常订单处理接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%ab%e3%80%81%e6%89%a3%e9%99%a4%e8%ae%a2%e5%8d%95%e7%89%a9%e5%93%81%e5%bc%82%e5%b8%b8%e8%ae%a2%e5%8d%95%e5%a4%84%e7%90%86%e6%8e%a5%e5%8f%a3" data-id="八、扣除订单物品异常订单处理接口" class="anchor"><span>八、扣除订单物品/异常订单处理接口</span></a></h2><blockquote>
+<p> 此接口主要用来在发生异常或退款时，扣除玩家通过订单获得的物品、奖励等。</p></blockquote>
+<p>协议号：<code>0x10009</code>  </p><p>参数：  </p><ul><li><h5 id="order_sn-string"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=order_sn-string" data-id="order_sn-string" class="anchor"><span><strong>order_sn : <code>string</code></strong></span></a></h5><p>  需要扣除的订单号</p><pre v-pre="" data-lang="json"><code class="lang-json">      "order_sn": "game168939328060671"</code></pre></li></ul><p>示例：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{   /** 发送给游戏服务器的请求 **/
+    "mid": 0x10009, // 65545
+    "payload": {
+        "order_sn": "game168939328060671"
+    }
+}
+
+{   /** 扣除成功时 **/
+    "error_code": 0, 
+    "error_msg": "", 
+    "data": {
+        // 
+    }
+}
+
+{   /** 扣除失败时 **/
+    "error_code": 100,        // 填一个不为0的error_code 
+    "error_msg": "找不到对应的订单"     // 填写失败的理由
+}</code></pre><h2 id="九、游戏数值修改接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e4%b9%9d%e3%80%81%e6%b8%b8%e6%88%8f%e6%95%b0%e5%80%bc%e4%bf%ae%e6%94%b9%e6%8e%a5%e5%8f%a3" data-id="九、游戏数值修改接口" class="anchor"><span>九、游戏数值修改接口</span></a></h2><blockquote>
+<p>数值修改用于各游戏支持对玩家各类（物品、货币、礼包等）经济值进行修改操作。  </p><p>接口配置方式和要求大体上跟 <strong>六、邮件发送接口</strong> 类似，都是先通过接口 <strong>四-2.获取游戏自定义接口的配置</strong> 来获取该接口的配置信息，各游戏“支持修改的数值分类”基本上等同于邮件附件支持发送的物品。  </p><p>接口配置分组： <strong>modify</strong></p></blockquote>
+<h3 id="示例配置："><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e7%a4%ba%e4%be%8b%e9%85%8d%e7%bd%ae%ef%bc%9a" data-id="示例配置：" class="anchor"><span>示例配置：</span></a></h3><blockquote>
+<p>也就是接口“获取游戏自定义接口的配置”的返回值的data </p></blockquote>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "game_numrical": {
+        "name": "游戏数值修改",
+        "mid": 123456,//自定义
+        "group": "modify",
+        "params": {
+            "player_ids": {
+                "required": true,
+                "data_type": "array<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>",
+                "display_type": "textarea",
+                "placeholder": "输入玩家ID"
+            },
+            ...{/* 额外参数，各游戏按支持修改的数值分类（如道具、货币、礼包等）自拟 */}
+            "item": {   //举例：道具
+                "required": false,
+                "data_type": "array",
+                "repeat": "user-defined",
+                "placeholder": "道具",
+                "component": {
+                    "params": {
+                        "equipment_type": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "select",
+                            "placeholder": "请选择道具",
+                            "data_source": [
+                                { "name": "道具一", "value": "equp1" },
+                                { "name": "道具二", "value": "equp2" }
+                            ]
+                        },
+                        "equipment_operation": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "select",
+                            "placeholder": "请选择操作",
+                            "data_source": [
+                                { "name": "增加", "value": "add" },
+                                { "name": "减少", "value": "del" }
+                            ]
+                        },
+                        "equipment_number": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "text",
+                            "placeholder": "请输入数量"
+                        }
+                    }
+                }
+            },
+
+            "currency": {   //举例：货币
+                "required": false,
+                "data_type": "array",
+                "repeat": "user-defined",
+                "placeholder": "货币",
+                "component": {
+                    "params": {
+                        "gold_type": {
+                            "required": true,
+                            "data_type": "int",
+                            "display_type": "select",
+                            "placeholder": "请选择货币",
+                            "data_source": [
+                                { "name": "铜钱", "value": 1 },
+                                { "name": "元宝", "value": 2 },
+                                { "name": "钻石", "value": 3 }
+                            ]
+                        },
+                        "gold_operation": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "select",
+                            "placeholder": "请选择操作",
+                            "data_source": [
+                                { "name": "增加", "value": "add" },
+                                { "name": "减少", "value": "del" }
+                            ]
+                        },
+                        "gold_number": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "text",
+                            "placeholder": "请输入数量"
+                        }
+                    }
+                }
+            },
+
+            "giftbag": {    //举例：礼包
+                "required": false,
+                "data_type": "array",
+                "repeat": "user-defined",
+                "placeholder": "礼包",
+                "component": {
+                    "params": {
+                        "giftbag_type": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "select",
+                            "placeholder": "请选择礼包",
+                            "data_source": [
+                                { "name": "礼包1", "value": "equp1" },
+                                { "name": "礼包2", "value": "equp2" },
+                                { "name": "礼包3", "value": "equp3" },
+                                { "name": "礼包4", "value": "equp4" },
+                                { "name": "礼包5", "value": "equp5" }
+                            ]
+                        },
+                        "giftbag_operation": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "select",
+                            "placeholder": "请选择操作",
+                            "data_source": [
+                                { "name": "增加", "value": "add" },
+                                { "name": "减少", "value": "del" }
+                            ]
+                        },
+                        "giftbag_number": {
+                            "required": true,
+                            "data_type": "string",
+                            "display_type": "text",
+                            "placeholder": "请输入数量"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}</code></pre><h3 id="示例返回结果："><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e7%a4%ba%e4%be%8b%e8%bf%94%e5%9b%9e%e7%bb%93%e6%9e%9c%ef%bc%9a" data-id="示例返回结果：" class="anchor"><span>示例返回结果：</span></a></h3><blockquote>
+<p>游戏接口处理逻辑说明：</p><p>接口参数一般会要求扣除一到多个玩家的一到多项物品，因此需要游戏循环遍历每个指定玩家的每项指定物品，逐一执行扣除操作，并返回操作结果。操作结果有以下三种：</p><ol><li><p>扣除成功，请返回</p><p> <code>{"item_id":"gold","item_name":"金币","status":"success"}</code></p></li><li><p>扣除失败（物品不可扣除或其他异常导致的失败），请返回</p><p><code>{"item_id":10001,"item_name":"10,000物资","status":"failure","error":"wrong item_id"}</code></p><p>（错误原因 <strong>error</strong> 自拟，只要能快速辨别错误类型即可，不要求很直观）</p></li><li><p>物品可以扣除，但玩家拥有的数量小于要求扣除的数量，请扣除至 0 然后返回差额，格式形如 </p><p><code>{"item_id":"crystal","item_name":"钻石","status":"part","diff_num":1024}</code></p></li><li><p>如果是玩家id错误之类的原因导致某个玩家处理失败，则直接在返回结果的 <strong>player_id</strong> 层级指明 <code>status:failure</code>和错误原因即可（见下方示例）。</p></li></ol><p>最终请以列表形式返回每个玩家每项物品的操作结果，便于运营人员能在Eastblue后台上直观地看到发送结果和处理错误信息。</p><p><strong>注意</strong>：</p><ol><li><strong>player_id、item_res、item_id、item_name、status、diff_num</strong> 均为保留字段名，前端会根据这些字段名获取相应数据显示于页面上，请勿使用其他自定义的字段名；</li><li><strong>data</strong> 不需要转化为 <strong>标准显示格式</strong>；</li><li><strong>item</strong> 的概念包含”道具、货币、礼包“等，同理<strong>item_id</strong> 也包含 <strong>currency_id、giftbag_id</strong> 等概念，统一起来方便处理。</li><li><strong>item_name</strong> 不存在或为空时，页面上将只显示 <strong>item_id</strong>，请尽可能加上 <strong>item_name</strong> 以便运营人员正确理解物品是什么。</li></ol></blockquote>
+<pre v-pre="" data-lang="json"><code class="lang-json">{   // 返回值
+    "error_code": 0, 
+    "error_msg": "", 
+    "data": [
+        {
+            "player_id": 12388888,
+            "status": "failure",//由于玩家id不存在之类的原因导致整个玩家的处理失败
+            "error": "wrong player_id",//简单说明失败的原因
+        },
+        {
+            "player_id": 12354657,
+            "status": "success",
+            "item_res": [
+                {
+                    "item_id":"gold",
+                    "item_name":"金币",
+                    "status":"success"
+                },
+                {
+                    "item_id":"crystal",
+                    "item_name":"钻石",
+                    "status":"failure",
+                    "error":"wrong item_id"
+                },
+                {
+                    "item_id":10001,
+                    "item_name":"10,000物资",
+                    "status":"part",
+                    "diff_num":1024
+                }
+            ]
+        },
+        {
+            "player_id": 10074576,
+            "status": "success",
+            "item_res": [
+                {
+                    "item_id":"gold",
+                    "item_name":"金币",
+                    "status":"failure",
+                    "error":"cannot reduce"
+                },
+                {
+                    "item_id":"crystal",
+                    "item_name":"钻石",
+                    "status":"success"
+                },
+                {
+                    "item_id":10001,
+                    "item_name":"10,000物资",
+                    "status":"part",
+                    "diff_num":2018
+                }
+            ]
+        }
+    ]
+}</code></pre><p>以上返回数据在Eastblue前端的展示结果如下：</p><blockquote>
+<ul><li><font color="red">玩家id: 12388888 (失败: wrong item_id)</font> </li><li>玩家id: 12354657<br>结果:<br>&nbsp;&nbsp;&nbsp;&nbsp;gold:金币 (成功)<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">crystal:钻石 (失败: wrong item_id)</font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">110001:10,000物资 (部分扣除，缺少 1024)</font> </li><li>玩家id: 10074576<br>结果:<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">gold:金币 (失败: cannot reduce)</font><br>&nbsp;&nbsp;&nbsp;&nbsp;crystal:钻石 (成功)<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">110001:10,000物资 (部分扣除，缺少 2018)</font></li></ul></blockquote>
+<h2 id="十、违规管理中用到的自定义功能（包括但不限于-封禁，重置信息）"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e3%80%81%e8%bf%9d%e8%a7%84%e7%ae%a1%e7%90%86%e4%b8%ad%e7%94%a8%e5%88%b0%e7%9a%84%e8%87%aa%e5%ae%9a%e4%b9%89%e5%8a%9f%e8%83%bd%ef%bc%88%e5%8c%85%e6%8b%ac%e4%bd%86%e4%b8%8d%e9%99%90%e4%ba%8e-%e5%b0%81%e7%a6%81%ef%bc%8c%e9%87%8d%e7%bd%ae%e4%bf%a1%e6%81%af%ef%bc%89" data-id="十、违规管理中用到的自定义功能（包括但不限于-封禁，重置信息）" class="anchor"><span>十、违规管理中用到的自定义功能（包括但不限于 封禁，重置信息）</span></a></h2><h3 id="_1-封禁接口说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e5%b0%81%e7%a6%81%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e" data-id="_1-封禁接口说明" class="anchor"><span>1. 封禁接口说明</span></a></h3><ul><li>一个封禁接口对应<strong>一种封禁类型</strong>，接口的<code>"name"</code>参数用来描述接口行为</li><li>封禁接口之间需要具有正交性，互相不会影响</li><li>封禁接口<code>"group"</code>需要为<code>"banned"</code></li><li>没有<code>ban_until_time</code>参数时，封禁接口用于<strong>永久封禁</strong>/<strong>解除封禁</strong></li></ul><h3 id="关于有没有ban_until_time参数的说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%b3%e4%ba%8e%e6%9c%89%e6%b2%a1%e6%9c%89ban_until_time%e5%8f%82%e6%95%b0%e7%9a%84%e8%af%b4%e6%98%8e" data-id="关于有没有ban_until_time参数的说明" class="anchor"><span>关于有没有<code>ban_until_time</code>参数的说明</span></a></h3><ul><li>有<code>ban_until_time</code>参数时，应当由游戏对封禁结束时间进行托管，时间到了自动解封</li><li>没有<code>ban_until_time</code>参数时，由平台对封禁结束时间进行托管，时间到了自动调用游戏接口进行解封</li><li>不管有没有<code>ban_until_time</code>参数，功能在使用上都可以选择封禁时长</li></ul><h4 id="必要参数"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%bf%85%e8%a6%81%e5%8f%82%e6%95%b0" data-id="必要参数" class="anchor"><span>必要参数</span></a></h4><table>
+<thead>
+<tr>
+<th>参数声明</th>
+<th>data_type</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>player_ids</td>
+<td>array<int></int></td>
+<td>一组封禁的玩家ID</td>
+</tr>
+<tr>
+<td>is_banned</td>
+<td>bool</td>
+<td><code>true</code>表示封禁，<code>false</code>表示解除封禁</td>
+</tr>
+</tbody></table>
+<h4 id="可选参数"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8f%af%e9%80%89%e5%8f%82%e6%95%b0" data-id="可选参数" class="anchor"><span>可选参数</span></a></h4><table>
+<thead>
+<tr>
+<th>参数声明</th>
+<th>data_type</th>
+<th>说明</th>
+<th>输入示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ban_until_time</td>
+<td>timestamp</td>
+<td>封禁结束时间</td>
+<td>1570437677</td>
+</tr>
+<tr>
+<td>ban_reason</td>
+<td>string</td>
+<td>封禁原因, 可以有data_source</td>
+<td>refund</td>
+</tr>
+<tr>
+<td>*</td>
+<td>*</td>
+<td>可以添加其他额外参数</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e8%af%b4%e6%98%8e" data-id="说明" class="anchor"><span>说明</span></a></h4><ul><li>由于违规管理功能需要统一配置处理原因，而且平台也需要记录相关的信息，所以对参数做出如下规定：</li><li>参数类型请按照上述规定定义，平台统一配置了ban_reason为string型，如果游戏定义为其他类型会通不过接口检验测试。同时平台的ban_reason的可选项可能会与游戏的不同，导致会回传给游戏没有定义的值。因此可以将ban_reason当作平台的保留字，游戏若想自己定义一套原因并记录，可以使用其他的参数名如ban_type之类。</li></ul><h4 id="示例："><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e7%a4%ba%e4%be%8b%ef%bc%9a" data-id="示例：" class="anchor"><span>示例：</span></a></h4><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "sample_banned_interface": {
+        "name": "禁言",
+        "mid": 123456,
+        "group": "banned",    // group需要为banned
+        "params": {
+            "player_ids": {
+                "required": true,
+                "data_type": "array<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int</span><span class="token punctuation">&gt;</span></span>",
+                "display_type": "textarea",
+                "placeholder": "输入玩家ID"
+            },
+            "is_banned": {
+                "required": true,
+                "data_type": "bool",
+                "display_type": "select",
+                "placeholder": "封禁/解除封禁",
+                "data_source": [
+                    { "name": "封禁", "value": true },
+                    { "name": "解封", "value": false }
+                ]
+            },
+            // 以下为可选参数，非必要
+            // 可选参数required需要为false, 方便eastblue这边自动解封
+            "ban_reason": {
+                "required": false,
+                "data_type": "string",
+                "display_type": "input",
+                "placeholder": "封禁理由",
+            },
+            "ban_until_time": {
+                "required": false,
+                "data_type": "timestamp",
+                "display_type": "datetime",
+                "placeholder": "封禁结束时间",
+            }
+        }
+    }
+}</code></pre><h3 id="_2-重置信息接口说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e9%87%8d%e7%bd%ae%e4%bf%a1%e6%81%af%e6%8e%a5%e5%8f%a3%e8%af%b4%e6%98%8e" data-id="_2-重置信息接口说明" class="anchor"><span>2. 重置信息接口说明</span></a></h3><ul><li>重置信息接口之间需要具有正交性，互相不会影响</li></ul><h3 id="关于有没有cool_time参数的说明"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%85%b3%e4%ba%8e%e6%9c%89%e6%b2%a1%e6%9c%89cool_time%e5%8f%82%e6%95%b0%e7%9a%84%e8%af%b4%e6%98%8e" data-id="关于有没有cool_time参数的说明" class="anchor"><span>关于有没有<code>cool_time</code>参数的说明</span></a></h3><ul><li>有<code>cool_time</code>参数时，应当由游戏对限制结束时间进行托管，时间到了自动解封</li><li>没有<code>cool_time</code>参数时，由平台对限制结束时间进行托管，时间到了自动调用游戏接口进行解封</li><li>不管有没有<code>cool_time</code>参数，功能在使用上都可以选择限制时长</li></ul><h4 id="必要参数-1"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%bf%85%e8%a6%81%e5%8f%82%e6%95%b0-1" data-id="必要参数-1" class="anchor"><span>必要参数</span></a></h4><table>
+<thead>
+<tr>
+<th>参数声明</th>
+<th>data_type</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>target_id</td>
+<td>int</td>
+<td>一个重置信息的ID</td>
+</tr>
+</tbody></table>
+<h4 id="可选参数-1"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8f%af%e9%80%89%e5%8f%82%e6%95%b0-1" data-id="可选参数-1" class="anchor"><span>可选参数</span></a></h4><table>
+<thead>
+<tr>
+<th>参数声明</th>
+<th>data_type</th>
+<th>说明</th>
+<th>输入示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cool_time</td>
+<td>int</td>
+<td>限制时长</td>
+<td>86400</td>
+</tr>
+<tr>
+<td>reset_type</td>
+<td>string</td>
+<td>重置类型, 可以有data_source</td>
+<td>player_name</td>
+</tr>
+<tr>
+<td>*</td>
+<td>*</td>
+<td>可以添加其他额外参数</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="说明-1"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e8%af%b4%e6%98%8e-1" data-id="说明-1" class="anchor"><span>说明</span></a></h4><ul><li>平台会记录下reset_type，并在解封时发给游戏</li></ul><h4 id="示例：-1"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e7%a4%ba%e4%be%8b%ef%bc%9a-1" data-id="示例：-1" class="anchor"><span>示例：</span></a></h4><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "params": {
+        "target_id": {
+            "data_source": "",
+            "placeholder": "ID",
+            "staorder": 1,
+            "data_type": "int",
+            "display_type": "text",
+            "required": true
+        },
+        "cool_time": {
+            "data_source": [{
+                "name": "解封",
+                "value": -1
+            }, {
+                "name": "1小时",
+                "value": 3600
+            }, {
+                "name": "1天",
+                "value": 86400
+            }, {
+                "name": "3天",
+                "value": 259200
+            }, {
+                "name": "7天",
+                "value": 604800
+            }, {
+                "name": "10年",
+                "value": 315360000
+            }],
+            "placeholder": "限制时长",
+            "staorder": 3,
+            "data_type": "int",
+            "display_type": "select",
+            "required": false
+        },
+        "reset_type": {
+            "data_source": [{
+                "name": "玩家昵称(输入玩家id)",
+                "value": "player_name"
+            }, {
+                "name": "玩家头像(输入玩家id)",
+                "value": "player_avatar"
+            }, {
+                "name": "玩家宣言(输入玩家id)",
+                "value": "player_signature"
+            }, {
+                "name": "种植园宠物(输入玩家id)",
+                "value": "garden_dog"
+            }],
+            "placeholder": "处理类型",
+            "staorder": 2,
+            "data_type": "string",
+            "display_type": "select",
+            "required": true
+        }
+    },
+    "feature_set": "玩家形象处理",
+    "name": "重置玩家信息",
+    "mid": 12345,
+    "group": "handle"
+}</code></pre><h2 id="十一、服务器管理接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%b8%80%e3%80%81%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%ae%a1%e7%90%86%e6%8e%a5%e5%8f%a3" data-id="十一、服务器管理接口" class="anchor"><span>十一、服务器管理接口</span></a></h2><blockquote>
+<p> 主要用于定义相关游戏服务器是否对外显示等操作。</p></blockquote>
+<h3 id="_1-切换游戏服务器对外显示状态"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e5%88%87%e6%8d%a2%e6%b8%b8%e6%88%8f%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%af%b9%e5%a4%96%e6%98%be%e7%a4%ba%e7%8a%b6%e6%80%81" data-id="_1-切换游戏服务器对外显示状态" class="anchor"><span>1. 切换游戏服务器对外显示状态</span></a></h3><blockquote>
+<p>此接口主要用于运营设置某服务器是否对外显示</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1000b</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">server_id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">游戏服务器ID</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">is_hide</td>
+<td align="center">是</td>
+<td align="center">boolean</td>
+<td align="center">是否显示标记</td>
+<td align="center">不显示：1 or true， 显示：0 or false</td>
+</tr>
+<tr>
+<td align="center">platform_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">平台id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1000b, //65547
+    "payload": {
+        "platform_id": 1,
+        "server_id": 1,
+        "is_hide": 1, //1-不对外显示,0-对外显示   
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65547, //0x1000b，请求的接口协议号
+    "data": []
+}</code></pre><h3 id="_2-页游服务器开服初始化"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e9%a1%b5%e6%b8%b8%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%bc%80%e6%9c%8d%e5%88%9d%e5%a7%8b%e5%8c%96" data-id="_2-页游服务器开服初始化" class="anchor"><span>2. 页游服务器开服初始化</span></a></h3><blockquote>
+<p>此接口主要用于运营设置页游服务器初始化操作</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1000d</p></blockquote>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1000d, //65549
+    "payload": {
+        "platform_id": 1, 
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65549, //0x1000d，请求的接口协议号
+    "data": []
+}</code></pre><h3 id="_3-市场导流设置-获取导流地区状态列表"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%8e%b7%e5%8f%96%e5%af%bc%e6%b5%81%e5%9c%b0%e5%8c%ba%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8" data-id="_3-市场导流设置-获取导流地区状态列表" class="anchor"><span>3. 市场导流设置-获取导流地区状态列表</span></a></h3><blockquote>
+<p>此接口主要用于市场对导流地区状态列表的查询</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1000e</p></blockquote>
+<p>请求参数：</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1000e, //65550
+    "payload": {
+        "platform_id": 1, 
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65550, //0x1000e，请求的接口协议号
+    "data": 
+      {
+        "location_list": {
+            "staname": "location_list",
+            "staorder": 99999,
+            "statvalue": [
+              {
+                    "kingdom_ids": 
+                    {
+                        "staname": "王国id(服务器id)", 
+                        "staorder": 2, 
+                        "stavalue": [1, 3]
+                    },
+                    "location_code": 
+                    {
+                        "staname": "创建地区代码", 
+                        "staorder": 2, 
+                        "stavalue": "JM"
+                    }
+              },
+              {
+                    "kingdom_ids": 
+                    {
+                        "staname": "王国id(服务器id)", 
+                        "staorder": 2, 
+                        "stavalue": [1, 3]
+                    },
+                    "location_code": 
+                    {
+                        "staname": "创建地区代码", 
+                        "staorder": 2, 
+                        "stavalue": "JM"
+                    }
+              }
+           ]
+        }
+     }
+}</code></pre><h3 id="_4-市场导流设置-获取导流语言状态列表"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%8e%b7%e5%8f%96%e5%af%bc%e6%b5%81%e8%af%ad%e8%a8%80%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8" data-id="_4-市场导流设置-获取导流语言状态列表" class="anchor"><span>4. 市场导流设置-获取导流语言状态列表</span></a></h3><blockquote>
+<p>此接口主要用于市场对导流语言状态列表的查询</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1000f</p></blockquote>
+<p>请求参数：</p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1000f, //65551
+    "payload": {
+        "platform_id": 1, 
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65551, //0x1000f，请求的接口协议号
+    "data": {
+      "language_info": 
+      {
+          "staname": "language_info",
+          "staorder": 99999,
+          "statvalue": [
+              {
+                  "language": {
+                      "staname": "游戏语言", 
+                      "staorder": 1, 
+                      "stavalue": 1
+                  },
+                  "kingdom_ids": {
+                      "staname": "王国id(服务器id)", 
+                      "staorder": 67, 
+                      "stavalue": [1, 2]
+                  },
+                  "language_name": {
+                      "staname": "语言名", 
+                      "staorder": 9999, 
+                      "stavalue": "English"
+                  }
+              },
+              {
+                  "language": {
+                      "staname": "游戏语言", 
+                      "staorder": 1, 
+                      "stavalue": 1
+                  },
+                  "kingdom_ids": {
+                      "staname": "王国id(服务器id)", 
+                      "staorder": 67, 
+                      "stavalue": [1, 2]
+                  },
+                  "language_name": {
+                      "staname": "语言名", 
+                      "staorder": 9999, 
+                      "stavalue": "English"
+                  }
+              }
+         ]
+      },
+      "joinable_kingdom_ids": 
+      {
+        "staname": "joinable_kingdom_ids",
+        "staorder": 99999,
+        "statvalue": [1, 2]
+      }
+    }
+}</code></pre><h3 id="_5-市场导流设置-设置导流地区状态列表"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_5-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%ae%be%e7%bd%ae%e5%af%bc%e6%b5%81%e5%9c%b0%e5%8c%ba%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8" data-id="_5-市场导流设置-设置导流地区状态列表" class="anchor"><span>5. 市场导流设置-设置导流地区状态列表</span></a></h3><blockquote>
+<p>此接口主要用于市场对导流地区状态列表的设置</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10013</p></blockquote>
+<p>请求参数：</p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">platform_id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">游戏所在平台ID</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">location_codes</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">国家地区code集合</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">kingdom_ids</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">服务器ID集合</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10013, //65555
+    "payload": {
+        "platform_id": 1,
+        "location_codes": ["JP"],
+        "kingdom_ids": [401]
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65555, //0x10013，请求的接口协议号
+    "data": []
+}</code></pre><h3 id="_6-市场导流设置-设置导流语言状态列表"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_6-%e5%b8%82%e5%9c%ba%e5%af%bc%e6%b5%81%e8%ae%be%e7%bd%ae-%e8%ae%be%e7%bd%ae%e5%af%bc%e6%b5%81%e8%af%ad%e8%a8%80%e7%8a%b6%e6%80%81%e5%88%97%e8%a1%a8" data-id="_6-市场导流设置-设置导流语言状态列表" class="anchor"><span>6. 市场导流设置-设置导流语言状态列表</span></a></h3><blockquote>
+<p>此接口主要用于市场对导流语言状态列表的设置</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10014</p><p>注意：languages参数可选值列表请各涉及游戏配置于0x10002、0x10003接口,表名请统一使用:'language_list',内容中涉及字段参数名称请保持一致,例：</p></blockquote>
+<pre v-pre="" data-lang="php"><code class="lang-php">[
+    ['id' =&gt; 1, 'code' =&gt; 'en', 'name' =&gt; '英语'],
+    ['id' =&gt; 2, 'code' =&gt; 'fr', 'name' =&gt; '法语'],
+    ['id' =&gt; 3, 'code' =&gt; 'it', 'name' =&gt; '意大利语'],
+    ['id' =&gt; 4, 'code' =&gt; 'zh', 'name' =&gt; '繁体中文'],
+    ['id' =&gt; 5, 'code' =&gt; 'ja', 'name' =&gt; '日语'],
+    ['id' =&gt; 6, 'code' =&gt; 'ko', 'name' =&gt; '韩语'],
+    ['id' =&gt; 7, 'code' =&gt; 'tr', 'name' =&gt; '土耳其语'],
+    ['id' =&gt; 8, 'code' =&gt; 'ru', 'name' =&gt; '俄语'],
+    ['id' =&gt; 10, 'code' =&gt; 'ar', 'name' =&gt; '阿拉伯语'],
+    ['id' =&gt; 11, 'code' =&gt; 'de', 'name' =&gt; '德语'],
+    ['id' =&gt; 12, 'code' =&gt; 'es', 'name' =&gt; '西班牙语'],
+    ['id' =&gt; 14, 'code' =&gt; 'zh-CN', 'name' =&gt; '简体中文'],
+]</code></pre><p>请求参数：</p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">platform_id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">游戏所在平台ID</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">languages</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">语言ID集合</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">kingdom_ids</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">服务器ID集合</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10014, //65556
+    "payload": {
+        "platform_id": 1,
+        "languages": [4],
+        "kingdom_ids": [401]
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65556, //0x10014，请求的接口协议号
+    "data": []
+}</code></pre><h2 id="十二、获取游戏实时在线人数接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%ba%8c%e3%80%81%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e5%ae%9e%e6%97%b6%e5%9c%a8%e7%ba%bf%e4%ba%ba%e6%95%b0%e6%8e%a5%e5%8f%a3" data-id="十二、获取游戏实时在线人数接口" class="anchor"><span>十二、获取游戏实时在线人数接口</span></a></h2><blockquote>
+<p> 主要用于获取游戏服务器实时在线人数。</p></blockquote>
+<h3 id="_1-获取游戏服务器实时在线人数"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%ae%9e%e6%97%b6%e5%9c%a8%e7%ba%bf%e4%ba%ba%e6%95%b0" data-id="_1-获取游戏服务器实时在线人数" class="anchor"><span>1. 获取游戏服务器实时在线人数</span></a></h3><blockquote>
+<p>此接口主要用于获取游戏服务器实时在线人数</p><p>手游每次只会发送一个请求，游戏一次性返回每个服务器每种语言的实时在线人数</p><p>页游会对每个主服发送一个请求，游戏返回该主服的实时在线人数</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1000c</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">game_id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">游戏ID</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">server_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">服务器id</td>
+<td align="center">页游会多传一个服务器ID</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1000c, //65548
+    "payload": {
+        "game_id": 1,
+        "server_id": 1,//页游会传服务器ID，手游不传
+    }
+}</code></pre><p>返回结果(data数据不需要转换为标准显示格式)：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65548, //0x1000c，请求的接口协议号
+    "data": [ 
+      //页游都是单语言，所以只返回所请求主服的total人数，如下：
+      {"lang" : "total","server_id" : 1,"num" : 274}
+
+      //多语言手游需要传每个服总人数total和分语言人数。单语言手游只用传每个服total人数即可，如下：
+      {"lang" : "total","server_id" : 1,"num" : 274},
+      {"lang" : "en","server_id" : 1,"num" : 257},
+      {"lang" : "fr","server_id" : 1,"num" : 17},
+      {"lang" : "total","server_id" : 2,"num" : 214},
+      {"lang" : "en","server_id" : 2,"num" : 197},
+      {"lang" : "fr","server_id" : 2,"num" : 17}
+      //语言代码："en","zh","fr","de","ja","ru","ko","es","tr","total" 
+      //对应      英，  中， 法， 德，  日， 俄， 韩，西班牙，土耳其，总人数
+    ]
+}</code></pre><h2 id="十三、敏感词报警接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%b8%89%e3%80%81%e6%95%8f%e6%84%9f%e8%af%8d%e6%8a%a5%e8%ad%a6%e6%8e%a5%e5%8f%a3" data-id="十三、敏感词报警接口" class="anchor"><span>十三、敏感词报警接口</span></a></h2><blockquote>
+<p> 主要用于设置敏感词以及获取敏感词记录。</p></blockquote>
+<h3 id="_1-添加和删除敏感词接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e6%b7%bb%e5%8a%a0%e5%92%8c%e5%88%a0%e9%99%a4%e6%95%8f%e6%84%9f%e8%af%8d%e6%8e%a5%e5%8f%a3" data-id="_1-添加和删除敏感词接口" class="anchor"><span>1. 添加和删除敏感词接口</span></a></h3><blockquote>
+<p>此接口主要用于添加和删除游戏敏感词</p><p>请求URL: 见整体说明中请求的url地址格式 </p><p>请求方式: post  </p><p>mid: 统一固定为 0x10015</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">word</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">敏感词</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">is_delete</td>
+<td align="center">是</td>
+<td align="center">boolean</td>
+<td align="center">是否删除</td>
+<td align="center">删除：1 or true， 添加：0 or false</td>
+</tr>
+<tr>
+<td align="center">need_page</td>
+<td align="center">否</td>
+<td align="center">boolean</td>
+<td align="center">是否需要上下文</td>
+<td align="center">需要：1 or true， 不需要：0 or false</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10015, //65557
+    "payload": {
+        "game_id": 97,
+        "word": "退钱",
+        "is_delete": 0,
+        "need_page": 1,
+    }
+}</code></pre><p>返回结果(data数据不需要转换为标准显示格式)：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65557, //0x10015，请求的接口协议号
+    "data": []
+}</code></pre><h3 id="_2-获取游戏的敏感词报警记录接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e8%8e%b7%e5%8f%96%e6%b8%b8%e6%88%8f%e7%9a%84%e6%95%8f%e6%84%9f%e8%af%8d%e6%8a%a5%e8%ad%a6%e8%ae%b0%e5%bd%95%e6%8e%a5%e5%8f%a3" data-id="_2-获取游戏的敏感词报警记录接口" class="anchor"><span>2. 获取游戏的敏感词报警记录接口</span></a></h3><blockquote>
+<p>此接口主要用于获取游戏的敏感词报警记录</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10016</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">需要拉取的敏感词报警记录的起始ID</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">num</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">该次拉取的条数</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10016, //65558
+    "payload": {
+        "game_id": 97,
+        "id": 323223,
+        "num": 1000,//表明拉取从ID从323223开始的1000条敏感词记录
+    }
+}</code></pre><p>返回结果(data数据不需要转换为标准显示格式)：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65558, //0x10016，请求的接口协议号
+    "data": [
+      {
+        "words_type" : 2,//表示该敏感词出现的位置
+        "player_id" : 1029888599,
+        "created_time" : 1546930952,
+        "id" : 323224,
+        "word" : "退钱",//敏感词的名称
+        "content" : "想退钱找我呀！",//敏感词报警记录
+        "alliance_id" : 213213//该玩家的帮会ID
+      }
+    ]
+    /*返回结果说明：words_type与旧平台一致
+      words_type=1 then '签名'
+      words_type=2 then '私聊'
+      words_type=3 then '聊天'
+      words_type=4 then '帮会留言'
+      words_type=5 then '帮会公告'
+      words_type=6 then '帮会描述'
+      words_type=7 then '玩家名字'
+      words_type=8 then '全帮邮件'*/
+}</code></pre><h2 id="十四、获取举报信息接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e5%9b%9b%e3%80%81%e8%8e%b7%e5%8f%96%e4%b8%be%e6%8a%a5%e4%bf%a1%e6%81%af%e6%8e%a5%e5%8f%a3" data-id="十四、获取举报信息接口" class="anchor"><span>十四、获取举报信息接口</span></a></h2><blockquote>
+<p> 主要用于获取举报信息。</p></blockquote>
+<h3 id="_1-获取举报信息接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e8%8e%b7%e5%8f%96%e4%b8%be%e6%8a%a5%e4%bf%a1%e6%81%af%e6%8e%a5%e5%8f%a3" data-id="_1-获取举报信息接口" class="anchor"><span>1. 获取举报信息接口</span></a></h3><blockquote>
+<p>此接口主要用于定时向游戏发送请求，获取举报信息。</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10017</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">game_id</td>
+<td align="center">否</td>
+<td align="center">int</td>
+<td align="center">游戏id</td>
+<td align="center">分平台的游戏（黑道）才会用到</td>
+</tr>
+<tr>
+<td align="center">id</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">需要拉取的举报信息记录的起始ID</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">num</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="center">该次拉取的条数</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10017, //65559
+    "payload": {
+        "game_id": 97,
+        "id": 652000,
+        "num": 2000,//表明拉取从ID从652000开始的2000条举报信息记录
+    }
+}</code></pre><p>返回结果(data数据不需要转换为标准显示格式)：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65559, //0x10017，请求的接口协议号
+    "data": [
+      {
+        "from_player_id" : 1029888599,//举报人ID
+        "to_player_id" : 1029253552,//被举报人ID
+        "created_time" : 1546930952,
+        "id" : 652004,
+        "report_type" : 3,//举报类型
+        "message" : "我要举报",
+      }
+    ]
+    /*返回结果说明：report_type与旧平台一致
+            1 =&gt; '聊天',
+            2 =&gt; '宣言',
+            3 =&gt; '头像',
+            4 =&gt; '玩家名',
+            5 =&gt; '作弊', */
+}</code></pre><h2 id="十五、分层实验相关接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=%e5%8d%81%e4%ba%94%e3%80%81%e5%88%86%e5%b1%82%e5%ae%9e%e9%aa%8c%e7%9b%b8%e5%85%b3%e6%8e%a5%e5%8f%a3" data-id="十五、分层实验相关接口" class="anchor"><span>十五、分层实验相关接口</span></a></h2><blockquote>
+<p> EastBlue分层实验功能与游戏的相关接口</p></blockquote>
+<h3 id="_1-创建实验接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_1-%e5%88%9b%e5%bb%ba%e5%ae%9e%e9%aa%8c%e6%8e%a5%e5%8f%a3" data-id="_1-创建实验接口" class="anchor"><span>1. 创建实验接口</span></a></h3><blockquote>
+<p>此接口主要用于向游戏后端发送新创建实验配置信息。</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x10019</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">unique_key</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">该实验的唯一标识</td>
+<td align="center">该实验的唯一标识 unique_key （也用作该实验分流算法的salt）</td>
+</tr>
+<tr>
+<td align="center">deviding_rule</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">分流规则</td>
+<td align="center">流量总数及流量分配方案</td>
+</tr>
+<tr>
+<td align="center">tracking_event</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">追踪事件的event_type、event_name等</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">test_players</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">该实验的全部测试账号</td>
+<td align="center">创建时没有指定测试账号则传空数组</td>
+</tr>
+<tr>
+<td align="center">player_filter</td>
+<td align="center">是</td>
+<td align="center">array</td>
+<td align="center">参与实验的用户筛选条件</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">final_group_key</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">实验结束时确定的最终使用的组别</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x10019, //65561
+    "payload": {
+        "unique_key": "3kg5a",    //分流标识符，详见分流算法的说明
+        "deviding_rule": {
+            "bucket_sum": 100,    //流量固定分为100份，以便进行灰度调整
+            "groups": [
+                {
+                    "group_key": "A",    //实验变体的标识符
+                    "ratio": 40     //该变体所占流量百分比
+                },
+                {
+                    "group_key": "B",
+                    "ratio": 30
+                },
+                {
+                    "group_key": "C",
+                    "ratio": 30
+                }
+            ]
+        },
+        "tracking_event": {    //实验追踪的标志事件，需记录至log_event表
+            "event_type": "experiment",    //固定，因为log_event表中还有newer_guide等事件
+            "event_name": "3kg5a_000"    //由salt拼接而来，以确保唯一性
+        },
+        "player_filter":{    //参与实验的用户筛选条件
+            "create_time": [1555718400,1558195200], //角色创建时间的范围，值为unix时间戳
+            "server_id": [100,101,102],   //服务器id，数组
+            "attribute_lang": ["en","fr"] //玩家语言
+            //暂无其他筛选条件，之后视需求添加
+        },
+        "test_players": [
+            {"player_id":1000546879, "group_key":"A"},
+            {"player_id":1000945775, "group_key":"B"},
+            {"player_id":1000547934, "group_key":"C"}
+        ],
+        "final_group_key": ""    //实验结束时确定的最终使用的组别,创建时没有会传空字符串
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "", 
+    "mid": 65561,
+    "data": []
+}</code></pre><h3 id="_2-更改实验接口"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_2-%e6%9b%b4%e6%94%b9%e5%ae%9e%e9%aa%8c%e6%8e%a5%e5%8f%a3" data-id="_2-更改实验接口" class="anchor"><span>2. 更改实验接口</span></a></h3><blockquote>
+<p>此接口主要用于向游戏后端更改实验配置。更改实验配置中deviding_rule，tracking_event，test_players，player_filter，final_group_key中的一个或多个。</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1001a</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">unique_key</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">该实验的唯一标识</td>
+<td align="center">该实验的唯一标识 unique_key （也用作该实验分流算法的salt）</td>
+</tr>
+<tr>
+<td align="center">deviding_rule</td>
+<td align="center">否</td>
+<td align="center">array</td>
+<td align="center">分流规则</td>
+<td align="center">流量总数及流量分配方案</td>
+</tr>
+<tr>
+<td align="center">tracking_event</td>
+<td align="center">否</td>
+<td align="center">array</td>
+<td align="center">追踪事件的event_type、event_name等</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">test_players</td>
+<td align="center">否</td>
+<td align="center">array</td>
+<td align="center">该实验的全部测试账号</td>
+<td align="center">这里传的是该游戏该实验的全部测试账号，游戏应该全部替换</td>
+</tr>
+<tr>
+<td align="center">player_filter</td>
+<td align="center">否</td>
+<td align="center">array</td>
+<td align="center">参与实验的用户筛选条件</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">final_group_key</td>
+<td align="center">否</td>
+<td align="center">string</td>
+<td align="center">实验结束时确定的最终使用的组别</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1001a, //65562
+    "payload": {
+        "unique_key": "3kg5a",    //分流标识符，同时也是实验的唯一标识
+        "test_players": [ //这里传的是该游戏该实验的全部测试账号，游戏应该全部替换
+            {"player_id":1000546879, "group_key":"A"},
+            {"player_id":1000945775, "group_key":"B"},
+            {"player_id":1000547934, "group_key":"C"}
+        ],
+        "deviding_rule": {        //分流规则
+            "bucket_sum": 100,    //流量固定分为100份，以便进行灰度调整
+            "groups": [
+                {
+                    "group_key": "A",    //实验变体名称
+                    "ratio": 40     //该变体所占流量百分比
+                },
+                {
+                    "group_key": "B",
+                    "ratio": 60
+                }
+            ]
+        },
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "",
+    "mid": 65562, //0x1001a，请求的接口协议号
+    "data": []
+}</code></pre><h3 id="_3-删除（撤销）实验"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_3-%e5%88%a0%e9%99%a4%ef%bc%88%e6%92%a4%e9%94%80%ef%bc%89%e5%ae%9e%e9%aa%8c" data-id="_3-删除（撤销）实验" class="anchor"><span>3. 删除（撤销）实验</span></a></h3><blockquote>
+<p>此接口主要用于向游戏后端通知删除（撤销）实验。</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1001b</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">unique_key</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">该实验的唯一标识</td>
+<td align="center">该实验的唯一标识 unique_key （也用作该实验分流算法的salt）</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1001b, //65563
+    "payload": {
+        "unique_key": "3kg5a",    //分流标识符，同时也是实验的唯一标识
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    "error_code": 0, 
+    "error_msg": "",
+    "mid": 65563, //0x1001b，请求的接口协议号
+    "data": []
+}</code></pre><h3 id="_4-开启实验"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_4-%e5%bc%80%e5%90%af%e5%ae%9e%e9%aa%8c" data-id="_4-开启实验" class="anchor"><span>4. 开启实验</span></a></h3><blockquote>
+<p>此接口主要用于向游戏后端通知实验的开启。开启unique_key所对应的实验。</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1001c</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">unique_key</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">该实验的唯一标识</td>
+<td align="center">该实验的唯一标识 unique_key （也用作该实验分流算法的salt）</td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1001c, //65564
+    "payload": {
+        "unique_key": "3kg5a",    //分流标识符，同时也是实验的唯一标识
+    }
+}</code></pre><p>返回结果(如果该实验并没有准备好，需返回“开启失败”)：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    //成功返回
+    "error_code": 0, 
+    "error_msg": "",
+    "mid": 65564, //0x1001c，请求的接口协议号
+    "data": []
+
+    //失败返回
+    "error_code": 123, //游戏自己定义，不为0就行
+    "error_msg": "开启失败",
+    "mid": 65564,
+    "data": []
+}</code></pre><h3 id="_5-结束实验"><a href="http://inner-pf.game168.com.tw/docs/#/api/Eastblue-%E6%B8%B8%E6%88%8FAPI%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3?id=_5-%e7%bb%93%e6%9d%9f%e5%ae%9e%e9%aa%8c" data-id="_5-结束实验" class="anchor"><span>5. 结束实验</span></a></h3><blockquote>
+<p>此接口主要用于向游戏后端通知实验的结束。结束unique_key所对应的实验,并记录最终确定使用的实验变体。</p><p>请求URL: 见整体说明中请求的url地址格式</p><p>请求方式: post  </p><p>mid: 统一固定为 0x1001d</p></blockquote>
+<p>请求参数：  </p><table>
+<thead>
+<tr>
+<th align="center">参数名称</th>
+<th align="center">是否必填</th>
+<th align="center">参数类型</th>
+<th align="center">参数说明</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">unique_key</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">该实验的唯一标识</td>
+<td align="center">该实验的唯一标识 unique_key （也用作该实验分流算法的salt）</td>
+</tr>
+<tr>
+<td align="center">final_group_key</td>
+<td align="center">是</td>
+<td align="center">string</td>
+<td align="center">最终确定使用的实验变体</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<pre v-pre="" data-lang="json"><code class="lang-json">{
+    "mid": 0x1001d, //65565
+    "payload": {
+        "unique_key": "3kg5a",    //分流标识符，同时也是实验的唯一标识
+        "final_group_key": "A"  //最终确定使用的实验变体
+    }
+}</code></pre><p>返回结果：  </p><pre v-pre="" data-lang="json"><code class="lang-json">{
+    //成功返回
+    "error_code": 0, 
+    "error_msg": "",
+    "mid": 65565, //0x1001d，请求的接口协议号
+    "data": []
+}</code></pre></article></section></main>
+  <script>
+    window.$docsify = {
+      name: '',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      search: 'auto',
+      plugins: [
+        function (hook, vm) {
+          hook.ready(function () {
+            mermaid.initialize({ startOnLoad: false });
+          });
+          hook.doneEach(function () {
+            mermaid.init(undefined, '.mermaid');
+          });
+        }
+      ],
+      markdown: {
+        renderer: {
+          code: function (code, lang) {
+            var html = '';
+            if (code.match(/^sequenceDiagram/) || code.match(/^graph/) || code.match(/^gantt/)) {
+              html = '<div class="mermaid">' + code + '</div>';
+            }
+            var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)
+            return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="./Eastblue-游戏API说明文档 - Document_files/docsify.min.js.下载"></script>
+  <script src="./Eastblue-游戏API说明文档 - Document_files/search.js.下载"></script>
+  <script type="text/javascript" src="./Eastblue-游戏API说明文档 - Document_files/mermaid.min.js.下载"></script>
+
+
+
+<div class="progress" style="opacity: 0; width: 0%;"></div></body></html>
