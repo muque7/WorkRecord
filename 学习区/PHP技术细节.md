@@ -47,3 +47,7 @@
 > $connection		使用你的应用程序配置的默认数据库连接
 >
 > $attributes		定义默认值
+
+##### 5.shouldReceive方法
+
+shouldReceive只能使用静态类调用
